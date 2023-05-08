@@ -1,1 +1,80 @@
-function _0x5b67(_0xf5c370,_0x555c67){const _0x277a64=_0x277a();return _0x5b67=function(_0x5b67b7,_0x4e7ae7){_0x5b67b7=_0x5b67b7-0xc1;let _0x203291=_0x277a64[_0x5b67b7];return _0x203291;},_0x5b67(_0xf5c370,_0x555c67);}const _0x47aba7=_0x5b67;(function(_0x1be80e,_0x5e896c){const _0x40d5f6=_0x5b67,_0x1ac735=_0x1be80e();while(!![]){try{const _0x28c178=parseInt(_0x40d5f6(0xd9))/0x1+-parseInt(_0x40d5f6(0xc5))/0x2+-parseInt(_0x40d5f6(0xe0))/0x3+-parseInt(_0x40d5f6(0xde))/0x4+-parseInt(_0x40d5f6(0xe4))/0x5+parseInt(_0x40d5f6(0xda))/0x6*(parseInt(_0x40d5f6(0xd6))/0x7)+parseInt(_0x40d5f6(0xcc))/0x8;if(_0x28c178===_0x5e896c)break;else _0x1ac735['push'](_0x1ac735['shift']());}catch(_0x5cc8c1){_0x1ac735['push'](_0x1ac735['shift']());}}}(_0x277a,0x3ebfc));import*as _0x53c7e1 from'three';import{OrbitControls}from'three/examples/jsm/controls/OrbitControls';import{GLTFLoader}from'../three.js-master/examples/jsm/loaders/GLTFLoader.js';import _0x11eccf from'./physics/RigidBodies.js';import _0x32851f from'./enemys.js';class EnemyGLTF{[_0x47aba7(0xec)]=null;[_0x47aba7(0xe6)]=null;constructor(_0x430215,_0x5062bd,_0x1442a6,_0x196cb4,_0x5f22b9=this[_0x47aba7(0xd3)],_0x2fdb58,_0x55a117,_0x17d485,_0x14003c,_0x46cd6b,_0x27d990,_0x27624d,_0x30f5b9,_0x57b591,_0x53f915,_0x1ca6f3,_0x37a630){const _0x258d00=_0x47aba7;let _0x119b7c={'x':0x0,'y':0x0,'z':0x0,'w':0x1},_0x3231e3=_0x27d990,_0x410297,_0xc1dad0;_0xc1dad0=_0x410297=_0x5062bd,_0x5062bd[_0x258d00(0xe8)][_0x258d00(0xc6)](_0x196cb4['x'],_0x196cb4['y'],_0x196cb4['z']),_0x5062bd[_0x258d00(0xcd)][_0x258d00(0xe9)]=_0x258d00(0xcb),_0x5062bd[_0x258d00(0xcd)]['hp']=_0x55a117,_0x5062bd[_0x258d00(0xcd)][_0x258d00(0xc9)]=_0x17d485,_0x5062bd[_0x258d00(0xcd)][_0x258d00(0xef)]=_0x14003c,_0x5062bd[_0x258d00(0xcd)][_0x258d00(0xcf)]=_0x46cd6b,_0x5062bd[_0x258d00(0xcd)][_0x258d00(0xdd)]=_0x27624d,_0x5062bd[_0x258d00(0xcd)][_0x258d00(0xd2)]=_0x27d990,_0x5062bd[_0x258d00(0xcd)][_0x258d00(0xed)]=_0x57b591?_0x57b591:0x0,_0x5062bd[_0x258d00(0xcd)][_0x258d00(0xe3)]=_0x30f5b9,_0x5062bd[_0x258d00(0xcd)][_0x258d00(0xe1)]=_0x53f915,_0x5062bd[_0x258d00(0xcd)][_0x258d00(0xc7)]=_0x1ca6f3,_0x5062bd[_0x258d00(0xcd)][_0x258d00(0xce)]=_0x37a630;let _0x4bec96=new _0x5f22b9[(_0x258d00(0xd7))]();_0x4bec96[_0x258d00(0xd8)](),_0x4bec96[_0x258d00(0xe5)](new _0x5f22b9[(_0x258d00(0xd4))](_0x196cb4['x'],_0x196cb4['y'],_0x196cb4['z'])),_0x4bec96[_0x258d00(0xd5)](new _0x5f22b9[(_0x258d00(0xc8))](_0x119b7c['x'],_0x119b7c['y'],_0x119b7c['z'],_0x119b7c['w']));let _0x4817d7=new _0x5f22b9[(_0x258d00(0xd0))](_0x4bec96),_0x326167=new _0x5f22b9[(_0x258d00(0xd4))](0x0,0x0,0x0),_0x40c71a=_0x430215[_0x258d00(0xc2)]['x']-_0x430215[_0x258d00(0xee)]['x'],_0x47732f=_0x430215[_0x258d00(0xc2)]['y']-_0x430215[_0x258d00(0xee)]['y'],_0x1e2eb5=_0x430215[_0x258d00(0xc2)]['z']-_0x430215[_0x258d00(0xee)]['z'],_0x2a644d=Math[_0x258d00(0xc2)](_0x40c71a,_0x47732f,_0x1e2eb5);const _0x49e9eb=new _0x5f22b9[(_0x258d00(0xc4))](new _0x5f22b9[(_0x258d00(0xd4))](_0x2a644d*0.5,_0x2a644d*0.5,_0x2a644d*0.5));_0x49e9eb[_0x258d00(0xdb)](0.05),_0x49e9eb[_0x258d00(0xdc)](_0x3231e3,_0x326167);let _0x14e007=new _0x5f22b9[(_0x258d00(0xc1))](_0x3231e3,_0x4817d7,_0x49e9eb,_0x326167),_0x3c328=new _0x5f22b9[(_0x258d00(0xe7))](_0x14e007);_0x3c328[_0x258d00(0xca)](0.9),_0x3c328[_0x258d00(0xd1)](0.05),_0x3c328[_0x258d00(0xeb)](0x4),_0x2fdb58[_0x258d00(0xdf)](_0x3c328),_0x11eccf[_0x258d00(0xe2)](_0xc1dad0),_0xc1dad0[_0x258d00(0xcd)][_0x258d00(0xea)]=_0x3c328,_0x3c328[_0x258d00(0xc3)]=_0xc1dad0,this[_0x258d00(0xec)]=_0xc1dad0,this[_0x258d00(0xe6)]=_0x3c328;}}function _0x277a(){const _0xff460e=['push','ballChildMeshmodel','405990oYSpNv','setOrigin','pbody','btRigidBody','position','tag','physicsBody','setActivationState','mesh','defense','min','type','btRigidBodyConstructionInfo','max','threeObject','btBoxShape','230202FTgQJO','set','attackSound','btQuaternion','power','setFriction','enemy_passivebodyGLTF','611296kOBJRS','userData','diedSound','speed','btDefaultMotionState','setRollingFriction','mass','ammoClone','btVector3','setRotation','3294151kqksRc','btTransform','setIdentity','467737DIOUFo','6opKjmT','getMargin','calculateLocalInertia','name','1751944CDvWdp','addRigidBody','370311ngxDPc','is_air_limit'];_0x277a=function(){return _0xff460e;};return _0x277a();}export default EnemyGLTF;
+import * as THREE from 'three';
+import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
+import { GLTFLoader } from './three.js-master/examples/jsm/loaders/GLTFLoader.js';
+import rigidBodies from './physics/RigidBodies.js';
+import enemys from './enemys.js';
+
+class EnemyGLTF{
+    mesh=null;
+    pbody=null;
+    
+    constructor(monsterbox,mesh,mesh_pureSkin,pos,Ammo=this.ammoClone,physicsWorld,hp,power,type,speed,mass,name,SKILLmesh,defense,is_air_limit,attackSound,diedSound){
+
+        let quat={x:0,y:0,z:0,w:1};
+        let masss=mass;
+        //console.log('monster mesh and pureSkin',mesh,mesh_pureSkin,monsterbox);
+
+        let enemyObject,enemy;
+
+        enemy=enemyObject=mesh;//object3d (bone,skinmehses모두포함) emshpureskin skinmehsess
+
+        mesh.position.set(pos.x,pos.y,pos.z);
+
+        //mesh.castShadow=true;
+        //mesh.receiveShadow=true;
+        mesh.userData.tag='enemy_passivebodyGLTF';
+        mesh.userData.hp=hp;
+        mesh.userData.power=power;
+        mesh.userData.type=type;
+        mesh.userData.speed=speed;
+        mesh.userData.name=name;
+        mesh.userData.mass=mass;
+        mesh.userData.defense=defense?defense:0;
+        mesh.userData.ballChildMeshmodel=SKILLmesh;
+        mesh.userData.is_air_limit=is_air_limit;
+        mesh.userData.attackSound=attackSound;
+        mesh.userData.diedSound=diedSound;
+
+        //ammosjs sections
+        let transform=new Ammo.btTransform();
+        transform.setIdentity()
+        transform.setOrigin(new Ammo.btVector3(pos.x,pos.y,pos.z));
+        transform.setRotation(new Ammo.btQuaternion(quat.x,quat.y,quat.z,quat.w));
+
+        let motionState=new Ammo.btDefaultMotionState(transform)
+
+        let localInertia = new Ammo.btVector3( 0, 0, 0 );
+        let calc_x=monsterbox.max.x - monsterbox.min.x
+        let calc_y=monsterbox.max.y - monsterbox.min.y
+        let calc_z=monsterbox.max.z - monsterbox.min.z;
+        let max_size=Math.max(calc_x,calc_y,calc_z);
+       // console.log("계산된 monsterbox크기:",calc_x,calc_y,calc_z,max_size);
+
+        const colshape=new Ammo.btBoxShape(new Ammo.btVector3(max_size*0.5,max_size*0.5,max_size*0.5));
+        colshape.getMargin(0.05);
+        colshape.calculateLocalInertia(masss,localInertia);
+        //console.log("meshgeometry btBoxShape shape모양정보:monstergltf",colshape);
+        let rigidBodyInfo=new Ammo.btRigidBodyConstructionInfo(masss,motionState,colshape,localInertia);
+        let rBody= new Ammo.btRigidBody(rigidBodyInfo);
+    
+        rBody.setFriction(0.9);//4
+       rBody.setRollingFriction(0.05);//10
+        //rbody.setRestitution(0.9);
+        //ballbody.setFriction(0.5);
+        //ballbody.setRollingFriction(0.05);
+        // ballbody.setRestitution(0.9);
+        rBody.setActivationState(4)//STATE.DISABLE_DEACTIVATION
+       // console.log("지정바디정보:",rBody);
+        physicsWorld.addRigidBody(rBody);
+
+
+        rigidBodies.push(enemy);
+        enemy.userData.physicsBody = rBody;
+        rBody.threeObject = enemy;
+
+        this.mesh=enemy;
+        this.pbody=rBody;
+    }
+
+}
+export default EnemyGLTF;

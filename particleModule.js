@@ -1,1 +1,286 @@
-const _0x188a4f=_0x397d;(function(_0x486e42,_0x2155a2){const _0x17e39e=_0x397d,_0x2dfeda=_0x486e42();while(!![]){try{const _0x500e16=-parseInt(_0x17e39e(0x211))/0x1+-parseInt(_0x17e39e(0x1e6))/0x2*(-parseInt(_0x17e39e(0x1dc))/0x3)+-parseInt(_0x17e39e(0x217))/0x4+-parseInt(_0x17e39e(0x215))/0x5+-parseInt(_0x17e39e(0x223))/0x6+parseInt(_0x17e39e(0x1f0))/0x7+-parseInt(_0x17e39e(0x202))/0x8*(-parseInt(_0x17e39e(0x208))/0x9);if(_0x500e16===_0x2155a2)break;else _0x2dfeda['push'](_0x2dfeda['shift']());}catch(_0x5da0a4){_0x2dfeda['push'](_0x2dfeda['shift']());}}}(_0x52e9,0xc47ab));import*as _0x360238 from'../three.js-master/build/three.module.js';function _0x52e9(){const _0x1b3b24=['Points','_camera','size','gdfsghk','position','26727384UlCWbj','distanceTo','alpha','\x0auniform\x20float\x20pointMultiplier;\x0aattribute\x20float\x20size;\x0aattribute\x20float\x20angle;\x0aattribute\x20vec4\x20colour;\x0avarying\x20vec4\x20vColour;\x0avarying\x20vec2\x20vAngle;\x0avoid\x20main()\x20{\x0a\x20\x20vec4\x20mvPosition\x20=\x20modelViewMatrix\x20*\x20vec4(position,\x201.0);\x0a\x20\x20gl_Position\x20=\x20projectionMatrix\x20*\x20mvPosition;\x0a\x20\x20gl_PointSize\x20=\x20size\x20*\x20pointMultiplier\x20/\x20gl_Position.w;\x0a\x20\x20vAngle\x20=\x20vec2(cos(angle),\x20sin(angle));\x0a\x20\x20vColour\x20=\x20colour;\x0a}','particleTexture','Vector3','9ZsERXP','clone','colour','sub','tan','velocityZ','floor','rotation','BufferGeometry','1005116kRqBoz','setAttribute','keyCode','add','276075MflMzp','filter','5883028sHcHJh','min','_material','lerp','ObjectType','xDistance','ShaderMaterial','parysticleSysmte\x20parmsss:\x20and\x20pointMultiperss:','log','Color','maxLife','AdditiveBlending','8439306KiBMdl','sort','yDistance','velocityY','angle','multiplyScalar','push','_sizeSpline','startColor','_alphaSpline','velocityX','_lerp','_AddParticles','AddPoint','addpointssss:','load','Float32BufferAttribute','1943562cfGuke','sign','_onKeyUp','Get','TextureLoader','Particles','camera','_points','particleSize','_UpdateGeometry','2QhHWMH','Step','userData','abs','endColor','_geometry','_particles','lineraSplinesss\x20constusrctorsss:','_UpdateParticles','copy','5275487GREAas','zDistance','attributes','currentSize','\x0auniform\x20sampler2D\x20diffuseTexture;\x0avarying\x20vec4\x20vColour;\x0avarying\x20vec2\x20vAngle;\x0avoid\x20main()\x20{\x0a\x20\x20vec2\x20coords\x20=\x20(gl_PointCoord\x20-\x200.5)\x20*\x20mat2(vAngle.x,\x20vAngle.y,\x20-vAngle.y,\x20vAngle.x)\x20+\x200.5;\x0a\x20\x20gl_FragColor\x20=\x20texture2D(diffuseTexture,\x20coords)\x20*\x20vColour;\x0a}','length','velocity','life','innerHeight','parent','needsUpdate','_colourSpline','random'];_0x52e9=function(){return _0x1b3b24;};return _0x52e9();}import{OrbitControls}from'../three.js-master/examples/jsm/controls/OrbitControls.js';import{TextureLoader}from'../three.js-master/build/three.module.js';import{GLTFLoader}from'../three.js-master/examples/jsm/loaders/GLTFLoader.js';const _VS=_0x188a4f(0x205),_FS=_0x188a4f(0x1f4);function _0x397d(_0xa7b90a,_0x1aa39e){const _0x52e9e8=_0x52e9();return _0x397d=function(_0x397d12,_0x1ea3c8){_0x397d12=_0x397d12-0x1cc;let _0x4bc425=_0x52e9e8[_0x397d12];return _0x4bc425;},_0x397d(_0xa7b90a,_0x1aa39e);}class LinearSpline{constructor(_0x3065b1){const _0x259cba=_0x188a4f;console[_0x259cba(0x21f)](_0x259cba(0x1ed),_0x3065b1),this[_0x259cba(0x1e3)]=[],this[_0x259cba(0x1d6)]=_0x3065b1;}[_0x188a4f(0x1d8)](_0x418b9b,_0x3a0700){const _0x5b02c0=_0x188a4f;console[_0x5b02c0(0x21f)](_0x5b02c0(0x1d9),_0x418b9b,_0x3a0700),this[_0x5b02c0(0x1e3)][_0x5b02c0(0x1d1)]([_0x418b9b,_0x3a0700]);}[_0x188a4f(0x1df)](_0x3e381d){const _0x19df21=_0x188a4f;let _0x3792a5=0x0;for(let _0x4af3f9=0x0;_0x4af3f9<this[_0x19df21(0x1e3)][_0x19df21(0x1f5)];_0x4af3f9++){if(this[_0x19df21(0x1e3)][_0x4af3f9][0x0]>=_0x3e381d)break;_0x3792a5=_0x4af3f9;}const _0xf7047=Math[_0x19df21(0x218)](this[_0x19df21(0x1e3)][_0x19df21(0x1f5)]-0x1,_0x3792a5+0x1);if(_0x3792a5==_0xf7047)return this[_0x19df21(0x1e3)][_0x3792a5][0x1];return this[_0x19df21(0x1d6)]((_0x3e381d-this[_0x19df21(0x1e3)][_0x3792a5][0x0])/(this[_0x19df21(0x1e3)][_0xf7047][0x0]-this[_0x19df21(0x1e3)][_0x3792a5][0x0]),this[_0x19df21(0x1e3)][_0x3792a5][0x1],this[_0x19df21(0x1e3)][_0xf7047][0x1]);}}class ParticleSystem{constructor(_0x4a257b){const _0x591014=_0x188a4f;console[_0x591014(0x21f)](_0x591014(0x21e),_0x4a257b,window[_0x591014(0x1f8)]/(0x2*Math[_0x591014(0x20c)](0.5*0x3c*Math['PI']/0xb4)));const _0x2df8b1={'diffuseTexture':{'value':new _0x360238[(_0x591014(0x1e0))]()[_0x591014(0x1da)](_0x4a257b[_0x591014(0x206)])},'pointMultiplier':{'value':window[_0x591014(0x1f8)]/(0x2*Math[_0x591014(0x20c)](0.5*0x3c*Math['PI']/0xb4))}};this[_0x591014(0x219)]=new _0x360238[(_0x591014(0x21d))]({'uniforms':_0x2df8b1,'vertexShader':_VS,'fragmentShader':_FS,'blending':_0x360238[_0x591014(0x222)],'depthTest':!![],'depthWrite':![],'transparent':!![],'vertexColors':!![]}),this[_0x591014(0x1fe)]=_0x4a257b[_0x591014(0x1e2)],this[_0x591014(0x1ec)]=[],this[_0x591014(0x1eb)]=new _0x360238[(_0x591014(0x210))](),this[_0x591014(0x1eb)][_0x591014(0x212)](_0x591014(0x201),new _0x360238[(_0x591014(0x1db))]([],0x3)),this[_0x591014(0x1eb)][_0x591014(0x212)](_0x591014(0x1ff),new _0x360238[(_0x591014(0x1db))]([],0x1)),this[_0x591014(0x1eb)][_0x591014(0x212)](_0x591014(0x20a),new _0x360238[(_0x591014(0x1db))]([],0x4)),this[_0x591014(0x1eb)][_0x591014(0x212)](_0x591014(0x1cf),new _0x360238[(_0x591014(0x1db))]([],0x1)),this[_0x591014(0x1e3)]=new _0x360238[(_0x591014(0x1fd))](this[_0x591014(0x1eb)],this[_0x591014(0x219)]),this[_0x591014(0x1e3)][_0x591014(0x1e8)][_0x591014(0x21b)]=_0x591014(0x1e1),_0x4a257b[_0x591014(0x1f9)][_0x591014(0x214)](this[_0x591014(0x1e3)]),this[_0x591014(0x1d4)]=new LinearSpline((_0x35df30,_0x5004b3,_0x129919)=>{return _0x5004b3+_0x35df30*(_0x129919-_0x5004b3);}),this[_0x591014(0x1d4)][_0x591014(0x1d8)](0.6,0x1),this[_0x591014(0x1d4)][_0x591014(0x1d8)](0x1,0x0),this[_0x591014(0x1fb)]=new LinearSpline((_0x3948be,_0x3f83ce,_0x400423)=>{const _0x242854=_0x591014,_0x3c860f=_0x3f83ce[_0x242854(0x209)]();return _0x3c860f[_0x242854(0x21a)](_0x400423,_0x3948be);}),this[_0x591014(0x1fb)][_0x591014(0x1d8)](0x0,new _0x360238[(_0x591014(0x220))](_0x4a257b[_0x591014(0x1d3)])),this[_0x591014(0x1fb)][_0x591014(0x1d8)](0x1,new _0x360238[(_0x591014(0x220))](_0x4a257b[_0x591014(0x1ea)])),this[_0x591014(0x1d2)]=new LinearSpline((_0x3e834a,_0x46ad8e,_0x28c4a7)=>{return _0x46ad8e+_0x3e834a*(_0x28c4a7-_0x46ad8e);}),this[_0x591014(0x1d2)][_0x591014(0x1d8)](0x0,0x1),this[_0x591014(0x1d2)][_0x591014(0x1d8)](0.5,0x5),this[_0x591014(0x1d2)][_0x591014(0x1d8)](0x1,0x1),this[_0x591014(0x1e5)]();}[_0x188a4f(0x1de)](_0x4e7912){const _0x4453a0=_0x188a4f;switch(_0x4e7912[_0x4453a0(0x213)]){case 0x20:this[_0x4453a0(0x1d7)]();break;}}[_0x188a4f(0x1d7)](_0x33ffe7,_0x4a7b8f){const _0x45af4e=_0x188a4f;let _0x5161c4=_0x4a7b8f[_0x45af4e(0x1e4)];!this[_0x45af4e(0x200)]&&(this[_0x45af4e(0x200)]=0x0);this[_0x45af4e(0x200)]+=_0x33ffe7;const _0x2c0941=Math[_0x45af4e(0x20e)](this[_0x45af4e(0x200)]*0x3);this[_0x45af4e(0x200)]-=_0x2c0941/0x3;for(let _0x1edf95=0x0;_0x1edf95<_0x2c0941;_0x1edf95++){const _0x1b92ea=(Math[_0x45af4e(0x1fc)]()*0.75+0.25)*0xa;this[_0x45af4e(0x1ec)][_0x45af4e(0x1d1)]({'position':new _0x360238[(_0x45af4e(0x207))]((Math[_0x45af4e(0x1fc)]()*_0x4a7b8f[_0x45af4e(0x21c)]-0x1)*0x1,(Math[_0x45af4e(0x1fc)]()*_0x4a7b8f[_0x45af4e(0x1cd)]-0x1)*0x1,(Math[_0x45af4e(0x1fc)]()*_0x4a7b8f[_0x45af4e(0x1f1)]-0x1)*0x1),'size':(Math[_0x45af4e(0x1fc)]()*0.5+0.5)*_0x5161c4,'colour':new _0x360238[(_0x45af4e(0x220))](),'alpha':0x1,'life':_0x1b92ea,'maxLife':_0x1b92ea,'rotation':Math[_0x45af4e(0x1fc)]()*0x2*Math['PI'],'velocity':new _0x360238[(_0x45af4e(0x207))](_0x4a7b8f[_0x45af4e(0x1d5)],_0x4a7b8f[_0x45af4e(0x1ce)],_0x4a7b8f[_0x45af4e(0x20d)])});}}[_0x188a4f(0x1e5)](){const _0x2881a5=_0x188a4f,_0x259a3d=[],_0x1c3d9c=[],_0x55fedb=[],_0x14887b=[];for(let _0xdca294 of this[_0x2881a5(0x1ec)]){_0x259a3d[_0x2881a5(0x1d1)](_0xdca294[_0x2881a5(0x201)]['x'],_0xdca294[_0x2881a5(0x201)]['y'],_0xdca294[_0x2881a5(0x201)]['z']),_0x55fedb[_0x2881a5(0x1d1)](_0xdca294[_0x2881a5(0x20a)]['r'],_0xdca294[_0x2881a5(0x20a)]['g'],_0xdca294[_0x2881a5(0x20a)]['b'],_0xdca294[_0x2881a5(0x204)]),_0x1c3d9c[_0x2881a5(0x1d1)](_0xdca294[_0x2881a5(0x1f3)]),_0x14887b[_0x2881a5(0x1d1)](_0xdca294[_0x2881a5(0x20f)]);}this[_0x2881a5(0x1eb)][_0x2881a5(0x212)](_0x2881a5(0x201),new _0x360238[(_0x2881a5(0x1db))](_0x259a3d,0x3)),this[_0x2881a5(0x1eb)][_0x2881a5(0x212)](_0x2881a5(0x1ff),new _0x360238[(_0x2881a5(0x1db))](_0x1c3d9c,0x1)),this[_0x2881a5(0x1eb)][_0x2881a5(0x212)](_0x2881a5(0x20a),new _0x360238[(_0x2881a5(0x1db))](_0x55fedb,0x4)),this[_0x2881a5(0x1eb)][_0x2881a5(0x212)](_0x2881a5(0x1cf),new _0x360238[(_0x2881a5(0x1db))](_0x14887b,0x1)),this[_0x2881a5(0x1eb)][_0x2881a5(0x1f2)][_0x2881a5(0x201)][_0x2881a5(0x1fa)]=!![],this[_0x2881a5(0x1eb)][_0x2881a5(0x1f2)][_0x2881a5(0x1ff)][_0x2881a5(0x1fa)]=!![],this[_0x2881a5(0x1eb)][_0x2881a5(0x1f2)][_0x2881a5(0x20a)][_0x2881a5(0x1fa)]=!![],this[_0x2881a5(0x1eb)][_0x2881a5(0x1f2)][_0x2881a5(0x1cf)][_0x2881a5(0x1fa)]=!![];}[_0x188a4f(0x1ee)](_0xbdbb27){const _0x5db01d=_0x188a4f;for(let _0x4849d2 of this[_0x5db01d(0x1ec)]){_0x4849d2[_0x5db01d(0x1f7)]-=_0xbdbb27;}this[_0x5db01d(0x1ec)]=this[_0x5db01d(0x1ec)][_0x5db01d(0x216)](_0x410574=>{const _0x222096=_0x5db01d;return _0x410574[_0x222096(0x1f7)]>0x0;});let _0x1283ef=0x0;for(let _0x457bc8 of this[_0x5db01d(0x1ec)]){const _0x420dc8=0x1-_0x457bc8[_0x5db01d(0x1f7)]/_0x457bc8[_0x5db01d(0x221)];_0x457bc8[_0x5db01d(0x20f)]+=_0xbdbb27*0.5,_0x457bc8[_0x5db01d(0x204)]=this[_0x5db01d(0x1d4)][_0x5db01d(0x1df)](_0x420dc8),_0x457bc8[_0x5db01d(0x1f3)]=_0x457bc8[_0x5db01d(0x1ff)]*this[_0x5db01d(0x1d2)][_0x5db01d(0x1df)](_0x420dc8),_0x457bc8[_0x5db01d(0x20a)][_0x5db01d(0x1ef)](this[_0x5db01d(0x1fb)][_0x5db01d(0x1df)](_0x420dc8)),_0x457bc8[_0x5db01d(0x201)][_0x5db01d(0x214)](_0x457bc8[_0x5db01d(0x1f6)][_0x5db01d(0x209)]()[_0x5db01d(0x1d0)](_0xbdbb27));const _0x5453ff=_0x457bc8[_0x5db01d(0x1f6)][_0x5db01d(0x209)]();_0x5453ff[_0x5db01d(0x1d0)](_0xbdbb27*0.1),_0x5453ff['x']=Math[_0x5db01d(0x1dd)](_0x457bc8[_0x5db01d(0x1f6)]['x'])*Math[_0x5db01d(0x218)](Math[_0x5db01d(0x1e9)](_0x5453ff['x']),Math[_0x5db01d(0x1e9)](_0x457bc8[_0x5db01d(0x1f6)]['x'])),_0x5453ff['y']=Math[_0x5db01d(0x1dd)](_0x457bc8[_0x5db01d(0x1f6)]['y'])*Math[_0x5db01d(0x218)](Math[_0x5db01d(0x1e9)](_0x5453ff['y']),Math[_0x5db01d(0x1e9)](_0x457bc8[_0x5db01d(0x1f6)]['y'])),_0x5453ff['z']=Math[_0x5db01d(0x1dd)](_0x457bc8[_0x5db01d(0x1f6)]['z'])*Math[_0x5db01d(0x218)](Math[_0x5db01d(0x1e9)](_0x5453ff['z']),Math[_0x5db01d(0x1e9)](_0x457bc8[_0x5db01d(0x1f6)]['z'])),_0x457bc8[_0x5db01d(0x1f6)][_0x5db01d(0x20b)](_0x5453ff);}this[_0x5db01d(0x1ec)][_0x5db01d(0x1cc)]((_0x543bc5,_0x3be23c)=>{const _0x7640f7=_0x5db01d,_0x4b3465=this[_0x7640f7(0x1fe)][_0x7640f7(0x201)][_0x7640f7(0x203)](_0x543bc5[_0x7640f7(0x201)]),_0x5c4d3a=this[_0x7640f7(0x1fe)][_0x7640f7(0x201)][_0x7640f7(0x203)](_0x3be23c[_0x7640f7(0x201)]);if(_0x4b3465>_0x5c4d3a)return-0x1;if(_0x4b3465<_0x5c4d3a)return 0x1;return 0x0;});}[_0x188a4f(0x1e7)](_0x1b7113,_0x2d3e1b){const _0x406466=_0x188a4f;this[_0x406466(0x1d7)](_0x1b7113,_0x2d3e1b),this[_0x406466(0x1ee)](_0x1b7113),this[_0x406466(0x1e5)]();}}export default ParticleSystem;
+import * as THREE from 'three'
+import {OrbitControls} from "./three.js-master/examples/jsm/controls/OrbitControls.js"
+import { TextureLoader } from './three.js-master/build/three.module.js';
+import { GLTFLoader } from './three.js-master/examples/jsm/loaders/GLTFLoader.js';
+const _VS = `
+uniform float pointMultiplier;
+attribute float size;
+attribute float angle;
+attribute vec4 colour;
+varying vec4 vColour;
+varying vec2 vAngle;
+void main() {
+  vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+  gl_Position = projectionMatrix * mvPosition;
+  gl_PointSize = size * pointMultiplier / gl_Position.w;
+  vAngle = vec2(cos(angle), sin(angle));
+  vColour = colour;
+}`;
+
+const _FS = `
+uniform sampler2D diffuseTexture;
+varying vec4 vColour;
+varying vec2 vAngle;
+void main() {
+  vec2 coords = (gl_PointCoord - 0.5) * mat2(vAngle.x, vAngle.y, -vAngle.y, vAngle.x) + 0.5;
+  gl_FragColor = texture2D(diffuseTexture, coords) * vColour;
+}`;
+
+
+class LinearSpline {
+  constructor(lerp) {
+    console.log("lineraSplinesss constusrctorsss:",lerp);
+    /*(t, a, b) => {
+        return a + t * (b - a);
+    }*/
+    this._points = [];
+    this._lerp = lerp;
+  }
+
+  AddPoint(t, d) {
+    console.log("addpointssss:",t,d);
+    this._points.push([t, d]);
+  }
+
+  Get(t) {
+   // console.log("this poiubsstss?? and tvaluess finding t valuess:",this._points,t);
+    let p1 = 0;
+
+    for (let i = 0; i < this._points.length; i++) {
+      if (this._points[i][0] >= t) {
+        break;
+      }
+      p1 = i;
+    }
+   // console.log("찾은 point1",p1);
+
+    const p2 = Math.min(this._points.length - 1, p1 + 1);
+    //console.log('this._points.length - 1,p1+1,p2 찾아낸 p2:',this._points.length - 1,p1+1,p2)
+    if (p1 == p2) {
+       // console.log('p1 == p2',this._points,this._points[p1][1])
+
+      return this._points[p1][1];
+    }
+    //console.log("this lerpsss:",(t - this._points[p1][0]) / (this._points[p2][0] - this._points[p1][0]), this._points[p1][1], this._points[p2][1])
+    return this._lerp(
+        (t - this._points[p1][0]) / (
+            this._points[p2][0] - this._points[p1][0]),
+        this._points[p1][1], this._points[p2][1]);
+   }
+}
+
+
+class ParticleSystem {
+  constructor(startparams) {
+
+    console.log("parysticleSysmte parmsss: and pointMultiperss:",startparams,window.innerHeight / (2.0 * Math.tan(0.5 * 60.0 * Math.PI / 180.0)));
+
+    const uniforms = {
+        diffuseTexture: {
+           // value: new THREE.TextureLoader().load('./resources/fire2.jpg')
+            value: new THREE.TextureLoader().load(startparams.particleTexture)
+        },
+        pointMultiplier: {
+            value: window.innerHeight / (2.0 * Math.tan(0.5 * 60.0 * Math.PI / 180.0))//1/6라디안 30도개념치 60도개념치에 대한 화며높이비율
+        }
+    };
+
+    this._material = new THREE.ShaderMaterial({
+        uniforms: uniforms,
+        vertexShader: _VS,
+        fragmentShader: _FS,
+        blending: THREE.AdditiveBlending,//normalBlending,NoBlending
+        depthTest: true,
+        depthWrite: false,
+        transparent: true,
+        vertexColors: true
+    });
+
+    this._camera = startparams.camera;
+    this._particles = [];
+
+    this._geometry = new THREE.BufferGeometry();
+    this._geometry.setAttribute('position', new THREE.Float32BufferAttribute([], 3));
+    this._geometry.setAttribute('size', new THREE.Float32BufferAttribute([], 1));
+    this._geometry.setAttribute('colour', new THREE.Float32BufferAttribute([], 4));
+    this._geometry.setAttribute('angle', new THREE.Float32BufferAttribute([], 1));
+
+    this._points = new THREE.Points(this._geometry, this._material);
+    this._points.userData.ObjectType='Particles';
+    startparams.parent.add(this._points);
+
+    this._alphaSpline = new LinearSpline((t, a, b) => {
+       // console.log("alphsapineslinss??what??",t,a,b);
+        //console.log("alphsapineslinss??what??  a + t * (b - a)", a + t * (b - a));
+
+      return a + t * (b - a);
+    });
+    //this._alphaSpline.AddPoint(0.0, 0.0);
+    //this._alphaSpline.AddPoint(0.1, 1.0);
+    this._alphaSpline.AddPoint(0.6, 1.0);
+    this._alphaSpline.AddPoint(1.0, 0.0);
+
+    this._colourSpline = new LinearSpline((t, a, b) => {
+       // console.log("_colourSpline??what??",t,a,b);
+
+      const c = a.clone();
+      return c.lerp(b, t);
+    });
+    this._colourSpline.AddPoint(0.0, new THREE.Color(startparams.startColor));
+    this._colourSpline.AddPoint(1.0, new THREE.Color(startparams.endColor));
+    //this._colourSpline.AddPoint(0.0, new THREE.Color(0xfe0000));
+    //this._colourSpline.AddPoint(1.0, new THREE.Color(0xff8020));
+    this._sizeSpline = new LinearSpline((t, a, b) => {
+      //  console.log("_sizeSpline??what??",t,a,b);
+      //  console.log("_sizeSpline??what??  a + t * (b - a)", a + t * (b - a));
+
+      return a + t * (b - a);
+    });
+    this._sizeSpline.AddPoint(0.0, 1.0);
+    this._sizeSpline.AddPoint(0.5, 5.0);
+    this._sizeSpline.AddPoint(1.0, 1.0);
+
+    //document.addEventListener('keyup', (e) => this._onKeyUp(e), false);
+  
+    this._UpdateGeometry();
+  }
+
+  _onKeyUp(event) {
+    switch(event.keyCode) {
+      case 32: // SPACE
+        this._AddParticles();
+        break;
+    }
+  }
+
+  _AddParticles(timeElapsed,updateparams) {
+   // console.log("addPartiless:",timeElapsed);
+    let particleSize=updateparams.particleSize
+    if (!this.gdfsghk) {
+      this.gdfsghk = 0.0;
+    }
+    this.gdfsghk += timeElapsed;
+    const n = Math.floor(this.gdfsghk * 3);
+    this.gdfsghk -= n / 3;
+
+    //console.log("this gfsdfsgsjtss and N",this.gdfsghk,n);
+
+    for (let i = 0; i < n; i++) {
+      const life = (Math.random() * 0.75 + 0.25) * 10.0;
+      //console.log("particle lisffsss:",i,life);
+      this._particles.push({
+          position: new THREE.Vector3(
+              (Math.random() * updateparams.xDistance - 1) * 1.0,//-1~0.99999   (Math.random() * updateparams.xDistance - 1) * 1.0
+              (Math.random() * updateparams.yDistance- 1) * 1.0,//-1~8.999999 (Math.random() * updateparams.yDistance - 1) * 1.0
+              (Math.random() * updateparams.zDistance - 1) * 1.0),  //(Math.random() * updateparams.zDistance - 1) * 1.0
+          size: (Math.random() * 0.5 + 0.5) * particleSize,//0.5~1  2~4
+
+          colour: new THREE.Color(),
+          alpha: 1,
+          life: life,
+          maxLife: life,
+         rotation: Math.random() * 2.0 * Math.PI,//0~2파이
+         //rotation:0,
+          velocity: new THREE.Vector3(updateparams.velocityX,updateparams.velocityY,updateparams.velocityZ),//updateparams.velocityX,updateparams.velocityY,updateparams.velocityZ,
+      });
+    }
+  }
+
+  _UpdateGeometry() {
+    const positions = [];
+    const sizes = [];
+    const colours = [];
+    const angles = [];
+
+    //console.log("updateGeomerysss:",this._UpdateGeometry);
+    for (let p of this._particles) {
+      //console.log("p.position.x, p.position.y, p.position.z",p.position.x, p.position.y, p.position.z)
+      //console.log("p.colour.r, p.colour.g, p.colour.b, p.alpha",p.colour.r, p.colour.g, p.colour.b, p.alpha)
+      //console.log("p.currentSize",p.currentSize)
+      //console.log("p.rotation",p.rotation)
+
+      positions.push(p.position.x, p.position.y, p.position.z);
+      colours.push(p.colour.r, p.colour.g, p.colour.b, p.alpha);
+      sizes.push(p.currentSize);
+      angles.push(p.rotation);
+    }
+    //console.log("update informatiosnsss pos,colors,size,angless",positions,colours,sizes,angles);
+
+    this._geometry.setAttribute(
+        'position', new THREE.Float32BufferAttribute(positions, 3));
+    this._geometry.setAttribute(
+        'size', new THREE.Float32BufferAttribute(sizes, 1));
+    this._geometry.setAttribute(
+        'colour', new THREE.Float32BufferAttribute(colours, 4));
+    this._geometry.setAttribute(
+        'angle', new THREE.Float32BufferAttribute(angles, 1));
+  
+    this._geometry.attributes.position.needsUpdate = true;
+    this._geometry.attributes.size.needsUpdate = true;
+    this._geometry.attributes.colour.needsUpdate = true;
+    this._geometry.attributes.angle.needsUpdate = true;
+  }
+
+  _UpdateParticles(timeElapsed) {
+    //console.log("==========update Particlesss:===============================",timeElapsed);
+    for (let p of this._particles) {
+       // console.log("=========leave particlesss lifesss:=============",p.life);
+      p.life -= timeElapsed;
+    }
+
+    this._particles = this._particles.filter(p => {
+      return p.life > 0.0;
+    });
+    //console.log("=========남은 particless상황:=============",this._particles);
+
+    let s=0;
+    for (let p of this._particles) {
+      const t = 1.0 - p.life / p.maxLife;
+       //console.log("1.0 - p.life / p.maxLife:", 1.0 - p.life / p.maxLife,s)
+       //console.log("this._alphaSpline.Get", this._alphaSpline.Get(t),s)
+       //console.log("this._sizeSpline.Get(t)", p.size,this._sizeSpline.Get(t),s)
+       //console.log("this._colourSpline.Get(t)", this._colourSpline.Get(t),s)
+       //console.log("p.velocity.clone().multiplyScalar(timeElapsed)", p.velocity.clone().multiplyScalar(timeElapsed),s)
+
+      p.rotation += timeElapsed * 0.5;
+      p.alpha = this._alphaSpline.Get(t);
+      p.currentSize = p.size * this._sizeSpline.Get(t);
+      p.colour.copy(this._colourSpline.Get(t));
+
+      p.position.add(p.velocity.clone().multiplyScalar(timeElapsed));
+
+      const drag = p.velocity.clone();
+      drag.multiplyScalar(timeElapsed * 0.1);
+      drag.x = Math.sign(p.velocity.x) * Math.min(Math.abs(drag.x), Math.abs(p.velocity.x));
+      drag.y = Math.sign(p.velocity.y) * Math.min(Math.abs(drag.y), Math.abs(p.velocity.y));
+      drag.z = Math.sign(p.velocity.z) * Math.min(Math.abs(drag.z), Math.abs(p.velocity.z));
+     // console.log("drag xyz",Math.sign(p.velocity.x) * Math.min(Math.abs(drag.x), Math.abs(p.velocity.x)), Math.sign(p.velocity.y) * Math.min(Math.abs(drag.y), Math.abs(p.velocity.y)), Math.sign(p.velocity.z) * Math.min(Math.abs(drag.z), Math.abs(p.velocity.z)));
+
+      p.velocity.sub(drag);
+    }
+
+    this._particles.sort((a, b) => {
+       // console.log("particles ssoartss:",a,b);
+      const d1 = this._camera.position.distanceTo(a.position);
+      const d2 = this._camera.position.distanceTo(b.position);
+
+      if (d1 > d2) {
+        return -1;
+      }
+
+      if (d1 < d2) {
+        return 1;
+      }
+
+      return 0;
+    });
+    //console.log("===================now paritclessss:=================================",this._particles);
+  }
+
+  Step(timeElapsed,updateparams) {
+    this._AddParticles(timeElapsed,updateparams);
+    this._UpdateParticles(timeElapsed);
+    this._UpdateGeometry();
+  }
+}
+export default ParticleSystem;

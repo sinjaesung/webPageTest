@@ -1,1 +1,47 @@
-function _0xd030(_0x2b6c28,_0x2e7413){const _0x1c2169=_0x1c21();return _0xd030=function(_0xd03028,_0x55df92){_0xd03028=_0xd03028-0x16b;let _0x4b5a02=_0x1c2169[_0xd03028];return _0x4b5a02;},_0xd030(_0x2b6c28,_0x2e7413);}const _0x499afa=_0xd030;(function(_0x4630bc,_0xea71ef){const _0x487a7b=_0xd030,_0x4f9077=_0x4630bc();while(!![]){try{const _0x32b4f7=parseInt(_0x487a7b(0x178))/0x1*(-parseInt(_0x487a7b(0x16f))/0x2)+parseInt(_0x487a7b(0x16d))/0x3*(-parseInt(_0x487a7b(0x16e))/0x4)+-parseInt(_0x487a7b(0x173))/0x5+parseInt(_0x487a7b(0x16c))/0x6*(-parseInt(_0x487a7b(0x170))/0x7)+parseInt(_0x487a7b(0x177))/0x8*(-parseInt(_0x487a7b(0x174))/0x9)+parseInt(_0x487a7b(0x176))/0xa+-parseInt(_0x487a7b(0x16b))/0xb*(-parseInt(_0x487a7b(0x171))/0xc);if(_0x32b4f7===_0xea71ef)break;else _0x4f9077['push'](_0x4f9077['shift']());}catch(_0xb5f49e){_0x4f9077['push'](_0x4f9077['shift']());}}}(_0x1c21,0x5fedb));import*as _0x47a91d from'../three.js-master/build/three.module.js';function _0x1c21(){const _0x49fa97=['212832qbmhwh','24GzzKXQ','2ePmzRd','97195WzFIkV','24nqySjX','\x0a\x20\x20\x20\x20varying\x20vec3\x20vNormal;\x0a\x20\x20\x20\x20varying\x20vec3\x20vColor;\x0a\x0a\x20\x20\x20\x20void\x20main(){\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20const\x20float\x20ambient\x20=\x200.4;//non\x20directional\x20light\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20vec3\x20light\x20=\x20vec3(1.0);//directional\x20light(shadowss)\x0a\x20\x20\x20\x20\x20\x20\x20\x20light=\x20normalize(light);\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20//how\x20is\x20directional\x20light\x20pointing\x20to\x20surface\x20(vNormal)??\x0a\x20\x20\x20\x20\x20\x20\x20\x20float\x20directional\x20=\x20max(\x20dot(vNormal,light),0.0);\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20//combine\x20directional\x20and\x20nondirecitonal\x20lighting\x20effects\x20to\x20color\x20of\x20oobject\x0a\x20\x20\x20\x20\x20\x20\x20\x20gl_FragColor\x20=vec4(\x20(directional\x20+\x20ambient)\x20*\x20vColor,\x201.0);\x0a\x0a\x20\x20\x20\x20}\x0a','719595TpEIAg','3681VguYPB','\x0a\x20\x20\x20\x20uniform\x20float\x20amplitude;\x20//animates\x20face/raingle\x20verticess\x20movement\x0a\x0a\x20\x20\x20\x20attribute\x20vec3\x20customColor;//vertex\x20color\x0a\x20\x20\x20\x20attribute\x20vec3\x20vel;//vertex\x20velocity\x0a\x0a\x20\x20\x20\x20varying\x20vec3\x20vNormal;//vertex\x20direction\x0a\x20\x20\x20\x20varying\x20vec3\x20vColor;//vertex\x20color\x0a\x0a\x20\x20\x20\x20void\x20main(){\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20vNormal\x20=\x20normal;\x0a\x20\x20\x20\x20\x20\x20\x20\x20vColor\x20=\x20customColor;\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20//add\x20velocity\x20to\x20position\x20of\x20verticess\x0a\x20\x20\x20\x20\x20\x20\x20\x20vec3\x20newPosition\x20=\x20position\x20+\x20vel\x20*\x20amplitude;\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20gl_Position\x20=\x20projectionMatrix\x20*\x20modelViewMatrix\x20*\x20vec4\x20(newPosition,1.0);\x0a\x20\x20\x20\x20}\x0a','4673050hvnIIM','3512olQZeb','478120ELCfHR','9242761zTggGN','228zOKoJC'];_0x1c21=function(){return _0x49fa97;};return _0x1c21();}const vertShader=_0x499afa(0x175),fragShader=_0x499afa(0x172),uniforms={'amplitude':{'value':0x0}};export{vertShader,fragShader,uniforms};
+import * as THREE from './three.js-master/build/three.module.js';
+
+const vertShader=`
+    uniform float amplitude; //animates face/raingle verticess movement
+
+    attribute vec3 customColor;//vertex color
+    attribute vec3 vel;//vertex velocity
+
+    varying vec3 vNormal;//vertex direction
+    varying vec3 vColor;//vertex color
+
+    void main(){
+
+        vNormal = normal;
+        vColor = customColor;
+
+        //add velocity to position of verticess
+        vec3 newPosition = position + vel * amplitude;
+
+        gl_Position = projectionMatrix * modelViewMatrix * vec4 (newPosition,1.0);
+    }
+`
+
+const fragShader= `
+    varying vec3 vNormal;
+    varying vec3 vColor;
+
+    void main(){
+        
+        const float ambient = 0.4;//non directional light
+
+        vec3 light = vec3(1.0);//directional light(shadowss)
+        light= normalize(light);
+
+        //how is directional light pointing to surface (vNormal)??
+        float directional = max( dot(vNormal,light),0.0);
+
+        //combine directional and nondirecitonal lighting effects to color of oobject
+        gl_FragColor =vec4( (directional + ambient) * vColor, 1.0);
+
+    }
+`
+
+const uniforms={
+    amplitude: { value: 0.0},
+}
+export {vertShader,fragShader,uniforms};
