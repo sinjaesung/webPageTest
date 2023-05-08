@@ -1,5 +1,5 @@
 
-import * as THREE from 'three.js-master/build/three.module.js';
+import * as THREE from 'three';
 
 console.log("THREEJS이용가능??:",THREE,new THREE.Clock());
 
