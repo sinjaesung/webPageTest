@@ -1,4 +1,4 @@
-import * as THREE from './three.js-master/build/three.module.js';
+import * as THREE from 'three';
 
 const vertShader=`
     uniform float amplitude; //animates face/raingle verticess movement

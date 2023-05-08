@@ -1,6 +1,5 @@
 import * as THREE from 'three';
-import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
-import { GLTFLoader } from './three.js-master/examples/jsm/loaders/GLTFLoader.js';
+
 import rigidBodies from './physics/RigidBodies.js';
 import enemys from './enemys.js';
 

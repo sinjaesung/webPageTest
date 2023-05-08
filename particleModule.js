@@ -1,7 +1,5 @@
 import * as THREE from 'three'
-import {OrbitControls} from "./three.js-master/examples/jsm/controls/OrbitControls.js"
-import { TextureLoader } from './three.js-master/build/three.module.js';
-import { GLTFLoader } from './three.js-master/examples/jsm/loaders/GLTFLoader.js';
+
 const _VS = `
 uniform float pointMultiplier;
 attribute float size;
