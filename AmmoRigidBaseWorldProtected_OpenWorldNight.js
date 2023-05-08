@@ -4663,7 +4663,7 @@ class App {
             this.scene.environment=texture;
         });
             
-        //this.createFriendGroup(Ammo); 
+        this.createFriendGroup(Ammo); 
         //eval(function_string);
 
         console.log("this.loadposx,this.loadposy,this.loadposz??:",this.loadposx,this.loadposy,this.loadposz)
@@ -5767,47 +5767,47 @@ class App {
             {
                 'name':'핑키',
                 'index':1,
-                'src':'data/character1/character1DanceRestFire3-3.glb'
+                'src':'https://sinjaesung.github.io/3DASSET/character1/character1DanceRestFire3-3.glb'
             },
             {
                 'name':'윈디',
                 'index':2,
-                'src':'data/character2/character2danceRest9.glb'
+                'src':'https://sinjaesung.github.io/3DASSET/character2/character2danceRest9.glb'
             },
             {
                 'name':'푸키',
                 'index':3,
-                'src':'data/character3/character3DanceRest3.glb'
+                'src':'https://sinjaesung.github.io/3DASSET/character3/character3DanceRest3.glb'
             },
             {
                 'name':'린린',
                 'index':4,
-                'src':'data/character4/character4DanceRest3-1.glb'
+                'src':'https://sinjaesung.github.io/3DASSET/character4/character4DanceRest3-1.glb'
             },
             {
                 'name':'카이',
                 'index':5,
-                'src':'data/character5/character5DanceRest2.glb'
+                'src':'https://sinjaesung.github.io/3DASSET/character5/character5DanceRest2.glb'
             },
             {
                 'name':'로이드',
                 'index':6,
-                'src':'data/character6/character6DanceRest5.glb'
+                'src':'https://sinjaesung.github.io/3DASSET/character6/character6DanceRest5.glb'
             },
             {
                 'name':'레이',
                 'index':7,
-                'src':'data/character7/character7DanceRest2.glb'
+                'src':'https://sinjaesung.github.io/3DASSET/character7/character7DanceRest2.glb'
             },
             {
                 'name':'미미',
                 'index':8,
-                'src':'data/character8/character8DanceRest.glb'
+                'src':'https://sinjaesung.github.io/3DASSET/character8/character8DanceRest.glb'
             },
             {
                 'name':'스미스',
                 'index':9,
-                'src':'data/character0another/character0Human2.glb'
+                'src':'https://sinjaesung.github.io/3DASSET/character0another/character0Human2.glb'
             }
         ]
         for(let c=0; c<character_database.length; c++){
