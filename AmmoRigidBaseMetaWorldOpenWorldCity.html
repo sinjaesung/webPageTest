@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="AmmoRigidBaseMetaWorldNow.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three" : "./three.js-master/build/three.module.js",
+                "three/examples/jsm/controls/OrbitControls":"./three.js-master/examples/jsm/controls/OrbitControls.js"
+            }
+        }
+    </script>
+    <script src="./three.js-master/examples/jsm/libs/ammo.wasm.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="AmmoRigidBaseWorldProtected_OpenWorldCity.js" defer></script>
+  <!-- <script type="module" src="threejsUse.js" defer></script>-->
+
+</head>
+<script>
+    
+//random game bgs....!!!
+let game_bgs=['https://sinjaesung.github.io/3DASSET/resource/gameimg/AiMechaGroup.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/gameImage1.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/HumanEvilGroups.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/MINDSET.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/pinkyGameimg.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/windyGameimg.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/pukyGameimg.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/rinrinGameimg.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/kaiGameimg.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/LoidGameimg.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/RayGameimg.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/mimiGameimg.jpg'];
+let guide_imgs=['https://sinjaesung.github.io/3DASSET/resource/gameimg/gameGuide1.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/gameGuide2.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/gameGuide3.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/gameGuide4.jpg'];
+
+let bg_random_index=Math.ceil(Math.random()*11)
+let guide_random_index=Math.ceil(Math.random()*3);
+
+</script>
+<body>
+    <div id="pageLoader">
+        <img src="" class='gamebg' id="gamebg"/>
+        <img src="" class='guideimg' id="guideimg"/>
+        <img src="https://sinjaesung.github.io/3DASSET/resource/gameimg/loading.gif" class='loading'/>
+    </div> 
+    <div id="webgl-container">
+        
+    </div>
+    <div id="characterstatus">
+        <!--HP,MOVEsTAUTS,POSITION,movespeed-->
+    </div>
+
+    <div id='characterUI'>
+        <div class='row'>
+            <div class='mousewheels'>
+                <div class='wrapping'>
+                    <img src='https://sinjaesung.github.io/3DASSET/resource/Zooms.png'>
+                    <p>MOUSE WHEEL</p>
+                </div>
+            </div> 
+        </div>
+        <div class='row flexhorizontal horizontal_spacearound'>
+            <div class='directionkey'>
+                <p class='itemW'>W</p>
+                <p class='itemA'>A</p>  
+                <p class='itemS'>S</p> 
+                <p class='itemD'>D</p>
+            </div>
+            <div class='jumpkey'>
+                <img src='https://sinjaesung.github.io/3DASSET/resource/jump.png'>
+                <p>spacebar</p>
+                <img src='https://sinjaesung.github.io/3DASSET/resource/Run.png'>
+                <p>Shift + w,a,s,d</p>
+            </div>
+            
+        </div>
+        <div class='row flexhorizontal'>
+            <div class='hpAndAttacks'>
+                <p id='hpstatus' class='textalignRight'>HP : </p>
+                <ul class='attackSkills '>
+                    <li class='Fskill'><div class='imgframe'></div><p>F</p></li>
+                
+                    <li class='Tskill' id="Tskill"><div class='imgframe'></div><p>T</p></li>
+                   
+                    <li class='Qskill'><div class='imgframe'></div><p>Q</p></li>
+                    <li class='Gskill'><div class='imgframe'></div><p>G</p></li>
+                </ul>
+            </div>
+        </div>
+        <div class='row'>
+            <ul class='utilSkills '>
+                <li class='Rskill'><div class='imgframe'></div><p>R</p></li>
+                <li class='Yskill' id='Yskill'><div class='imgframe'></div><p>Y</p></li>
+            </ul>
+        </div> 
+        <div class='row flexhorizontal horizontalcenter'>
+            <div class='characterprofile'>
+                <img src='' id='characterface'/>
+                <p class='charactername'id='charactername'></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    window.onload=function(){
+        let tskill=document.getElementById("Tskill");
+        let character_object=JSON.parse(localStorage.getItem("characterdatabase"));
+        let type=character_object['type'];
+        if(type!='Far'){
+            tskill.style.display='block'
+        }else{
+            tskill.style.display='none';
+        }
+        let gamebg=document.getElementById("gamebg");
+        let guideimg=document.getElementById("guideimg");
+        let game_bg=game_bgs[bg_random_index];
+        let guide_bg=guide_imgs[guide_random_index];
+
+        gamebg.src=game_bg;
+        guideimg.src=guide_bg;
+    }
+</script>
+</html> 

@@ -19,8 +19,14 @@
       
         //var characterSrc='./data/character3/character3DanceRest3.glb';
        // var characterSrc='https://github.com/sinjaesung/3DASSET/blob/master/character0another/character0Human2.glb';
-       var characterSrc='https://sinjaesung.github.io/3DASSET/character0another/character0Human2.glb';
-       
+       console.log("animBase페이지 characterDatabase값 상태 :",localStorage.getItem("characterdatabase"));
+       let character_object=JSON.parse(localStorage.getItem("characterdatabase"));
+       let characterSrc=character_object['characterSrc']
+  
+       //let  characterSrc='https://sinjaesung.github.io/3DASSET/character0another/character0Human2.glb';
+        let inner_secure_database=localStorage.getItem("characterdatabase");
+        localStorage.removeItem('characterdatabase')
+        console.log("저장해둔 값 타깃다음페이지이동시에 다시 지정하여 보냄.",inner_secure_database)
         //var decrypt=CryptoJS.enc.Base64.parse(characterSrc);
         //console.log("순수decrpypt값:",decrypt);
         //var hashData=decrypt.toString(CryptoJS.enc.Utf8);
@@ -30,7 +36,7 @@
     </script>
     <script type="module" src="animBaseUse.js" defer></script>
     <style>
-        .submitNext{position:absolute;bottom:2%;right:5%; width:120px;height:60px;line-height:1.5;font-size:20px; background-color:#8020ef; color:white; cursor:pointer}
+        .submitNext{position:absolute;bottom:2%;right:5%; width:120px;height:60px;line-height:1.5;font-size:20px; background-color:#8020ef; color:white; cursor:pointer;display:flex;align-items:center;justify-content:center}
         .submitNext:hover{
             background-color:#df9040;
         }
@@ -50,97 +56,21 @@
     </div>
     
 </div>
-<form method='POST' action="AmmoRigidBaseMetaWorldOpenWorldCity.php"id='formsubmit'>
-    <input type='hidden' name='loadposx' value='<?=$loadposx?>' class='formdata'/>
-    <input type='hidden' name='loadposy' value='<?=$loadposy?>'class='formdata'/>
-    <input type='hidden' name='loadposz' value='<?=$loadposz?>'class='formdata'/>
-
-    <input type='hidden' name='type' value='<?=$type?>'class='formdata'/>
-    <input type='hidden' name='rasierParticleSize' value='<?=$rasierParticleSize?>'class='formdata'/>
-
-    <input type='hidden' name='characterhp' value='<?=$characterhp?>'class='formdata'/>
-    <input type='hidden' name='characterspeed' value='<?=$characterspeed?>'class='formdata'/>
-    <input type='hidden' name='characterdefense' value='<?=$characterdefense?>'class='formdata'/>
-    <input type='hidden' name='characterpower' value='<?=$characterpower?>'class='formdata'/>
-    <input type='hidden' name='explodepower' value='<?=$explodepower?>'class='formdata'/>
-    <input type='hidden' name='rasierpower' value='<?=$rasierpower?>'class='formdata'/>
-    <input type='hidden' name='weaponpower' value='<?=$weaponpower?>'class='formdata'/>
-    <input type='hidden' name='transformpower' value='<?=$transformpower?>'class='formdata'/>
-    <input type='hidden' name='mass' value='<?=$mass?>'class='formdata'/>
-    <input type='hidden' name='weaponpowerflag' value='<?=$weaponpowerflag?>' class='formdata'/>
-    <input type='hidden' name='rasierpowerflag' value='<?=$rasierpowerflag?>' class='formdata'/>
-
-    <input type='hidden' name='weapon_xamountshape' value='<?=$weapon_xamountshape?>'class='formdata'/>
-    <input type='hidden' name='weapon_yamountshape' value='<?=$weapon_yamountshape?>'class='formdata'/>
-    <input type='hidden' name='weapon_zamountshape' value='<?=$weapon_zamountshape?>'class='formdata'/>
-    <input type='hidden' name='weapon_xTanFlag' value='<?=$weapon_xTanFlag?>'class='formdata'/>
-    <input type='hidden' name='weapon_ySinFlag' value='<?=$weapon_ySinFlag?>'class='formdata'/>
-    <input type='hidden' name='weapon_zCosFlag' value='<?=$weapon_zCosFlag?>'class='formdata'/>
-    <input type='hidden' name='weapon_particleSrc' value='<?=$weapon_particleSrc?>'class='formdata'/>
-    <input type='hidden' name='weapon_particleSize' value='<?=$weapon_particleSize?>'class='formdata'/>
-    <input type='hidden' name='weapon_effectColor' value='<?=$weapon_effectColor?>'class='formdata'/>
-    <input type='hidden' name='weaponSoundSrc' value='<?=$weaponSoundSrc?>'class='formdata'/>
-    <input type='hidden' name='weaponSrc' value='<?=$weaponSrc?>'class='formdata'/>
-    <input type='hidden' name='characterSrc' value='<?=$characterSrc?>'class='formdata'/>
-    <input type='hidden' name='characterTransformSrc' value='<?=$characterTransformSrc?>'class='formdata'/>
-    <input type='hidden' name='characterballSrc' value='<?=$characterballSrc?>'class='formdata'/>
-    <input type='hidden' name='characterballExplodeSrc' value='<?=$characterballExplodeSrc?>'class='formdata'/>
-    <input type='hidden' name='explosionSoundSrc' value='<?=$explosionSoundSrc?>'class='formdata'/>
-    <input type='hidden' name='explodeObjectColor' value='<?=$explodeObjectColor?>'class='formdata'/>
-    <input type='hidden' name='explosion_effectColor' value='<?=$explosion_effectColor?>'class='formdata'/>
-    <input type='hidden' name='explosion_particleSrc' value='<?=$explosion_particleSrc?>'class='formdata'/>
-    <input type='hidden' name='explosion_particleSize' value='<?=$explosion_particleSize?>'class='formdata'/>
-    <input type='hidden' name='rasierSoundSrc' value='<?=$rasierSoundSrc?>'class='formdata'/>
-    <input type='hidden' name='rasier_effectColor' value='<?=$rasier_effectColor?>'class='formdata'/>
-    <input type='hidden' name='rasierSoundSrc' value='<?=$rasierSoundSrc?>'class='formdata'/>
-    <input type='hidden' name='rasier_particleSrc' value='<?=$rasier_particleSrc?>'class='formdata'/>
-    <input type='hidden' name='rasierexplode_particleSrc' value='<?=$rasierexplode_particleSrc?>'class='formdata'/>
-    <input type='hidden' name='rasierexplode_particleSize' value='<?=$rasierexplode_particleSize?>'class='formdata'/>
-
-    
-    <input type='hidden' name='transformSoundSrc' value='<?=$transformSoundSrc?>'class='formdata'/>
-    <input type='hidden' name='transform_effectColorstart' value='<?=$transform_effectColorstart?>'class='formdata'/>
-    <input type='hidden' name='transform_effectColorend' value='<?=$transform_effectColorend?>'class='formdata'/>
-    <input type='hidden' name='transform_particleSrc' value='<?=$transform_particleSrc?>'class='formdata'/>
-    <input type='hidden' name='transform_emissiveColor' value='<?=$transform_emissiveColor?>'class='formdata'/>
-    <input type='hidden' name='transform_particleSize' value='<?=$transform_particleSize?>'class='formdata'/>
-
-    <input type='hidden' name='characterindex' value='<?=$characterindex?>'class='formdata'/>
-    <input type='hidden' name='recoverpower' value='<?=$recoverpower?>'class='formdata'/>
-
-    <input type='hidden' name='face' value='<?=$face?>'class='formdata'/>
-    <input type='hidden' name='cname' value='<?=$cname?>'class='formdata'/>
-
-</form>
+ 
 <span class='prevbtn' onclick='javascript:history.back();'>BACK</span>
-<span class='submitNext'id='submitNext'>PLAY</span>
+<a class='submitNext'id='submitNext' href="AmmoRigidBaseMetaWorldOpenWorldCity.html">PLAY</a>
 
 <script>
 let formdatas=document.getElementsByClassName("formdata");
 let character_database={};
 let submitNext=document.getElementById("submitNext");
 
-for(let s=0; s<formdatas.length; s++){
-    let item=formdatas[s];
-    character_database[item['name']]=item.value;
-
-    item.value="";
-
-    console.log("초기 charactderdastabase초기셋티값:",character_database)
-}
-
 submitNext.onclick=function(event){
+    //event.preventDefault();
     // event.preventDefault();
-    console.log("제출 이벤트당시때의 characterdatabase상태:",event.target,character_database);
-
-    // return false;
-    for(let s=0; s<formdatas.length; s++){
-        let item=formdatas[s];
-
-        item.value=character_database[item['name']];
-        console.log("submit버튼 누른직후순간에만 값 지정하여 바로 보냄.:",character_database[item['name']]);
-    }
-    formsubmit.submit();
+    console.log("제출 이벤트당시때의 characterdatabase상태:",event.target,inner_secure_database);
+    
+    localStorage.setItem("characterdatabase",inner_secure_database);
 }
 </script>
 </body>
