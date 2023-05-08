@@ -1,0 +1,247 @@
+* {
+    outline: none;
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
+#webgl-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+}
+
+html, body,
+div, span,
+dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6,
+blockquote, p, address, pre, cite,
+form, fieldset, input, textarea, select,
+table, th, td {
+	margin:0;
+	padding:0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size:100%;
+	font-weight:normal;
+	letter-spacing:normal;
+}
+
+fieldset, img, abbr,acronym { border:0 none; }
+
+ol, ul { list-style:none; }
+
+table {
+	border-collapse: separate;
+	border-spacing:0;
+	border:0 none;
+}
+caption, th, td {
+	text-align:left;
+	font-weight: normal;
+	border:0;
+}
+
+address, caption, strong, em, cite {
+	font-weight:normal;
+	font-style:normal;
+}
+ins { text-decoration:none; }
+del { text-decoration:line-through; }
+
+blockquote:before, blockquote:after, q:before, q:after { content:""; }
+blockquote,q { quotes:"" ""; }
+
+hr { display:none; }
+
+/* HTML5 Boilerplate  */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block; }
+img, video { /*max-width:100%;*/ border:0; vertical-align:top; }
+audio, canvas, video { display:inline-block; *display:inline; *zoom: 1; }
+
+* { margin:0; padding:0; border:0; outline:0; vertical-align:top; box-sizing:border-box; }
+ul, ol, dl { list-style:none; }
+a { vertical-align:top; text-decoration:none; color:inherit; }
+table { border-collapse:collapse; border-spacing:0; }
+input, select, label { vertical-align:middle;background-color:transparent;}
+button, input, select, textarea { margin:0; vertical-align:baseline; *vertical-align:middle;font-weight:normal;letter-spacing:normal;}
+button, input { line-height:normal;}
+button, select { text-transform:none; }
+
+select {
+     -webkit-appearance: none;/* 네이티브 외형 감추기*/
+     -moz-appearance: none;
+     appearance: none;
+    font-weight:normal;letter-spacing:normal;
+}
+/* IE 10, 11의 네이티브 화살표 숨기기 */
+select::-ms-expand {
+    display: none;
+}
+label { cursor:pointer; }
+
+input[type="file"] {display:none}
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance:none; }
+input[type="search"] { -webkit-appearance:textfield; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; }
+button::-moz-focus-inner, input::-moz-focus-inner { border:0; padding:0; }
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance:button; cursor: pointer; *overflow:visible; }
+input::placeholder{
+	color:#999
+}
+textarea::placeholder{
+	color:#e7e7e7
+}
+textarea { overflow:auto; vertical-align:top; resize:none}
+
+html,body{height:100%;background-color:white}
+address{font-style:normal;}
+
+body {
+  font-family:"Noto Sans Kr","Noto Sans","Arial Regular","ARIAL",sans-serif;
+}
+button, input, select, textarea { font-family:"Noto Sans Kr","Noto Sans","Arial Regular","ARIAL",sans-serif;  font-weight:normal;letter-spacing:normal;}
+
+
+/*개발모드시에만 노출*/
+#characterstatus{
+    position:absolute;left:0%;top:0;width:30%;height:auto;
+    background-color:rgba(0,0,0,0.8);color:white;word-break:break-all;z-index:10005
+}
+
+
+.position_relative{
+    position:relative;
+}
+.row{
+    display:block;
+}
+.flexhorizontal{
+    display:flex;flex-flow:row wrap;align-items:center
+}
+.horizontal_spacearound{
+    justify-content:space-around
+}
+.horizontalcenter{
+    justify-content:center
+}
+.textalignRight{
+    text-align:right;padding-right:1%
+}
+
+
+/*chgaterUi*/
+#pageLoader{
+    z-index:9999;display:flex; justify-content:center;align-items:center;
+    position:fixed; width:100%; height:100vh; left:0; top:0; 
+    background-color:#000; opacity:1
+}
+.gamebg{
+    width:auto;height:100%;position:absolute;left:0;top:0;
+}
+.guideimg{
+    width:auto;height:50%; position:absolute;right:0;top:0;
+    opacity:0.9
+}
+.loading{
+    width:auto;height:40%; position:absolute; bottom:1%;right:5%
+}
+
+#characterUI{
+    position:absolute;right:0;bottom:0;height:auto;background-color:rgba(255,255,255,0.8); width:300px;
+    font-size:16px;
+}
+#characterUI .directionkey{
+   color:white;position:relative;width:160px;height:160px; 
+    background-size:40% auto;background-repeat:no-repeat;background-position:center; 
+    background-image:url('https://sinjaesung.github.io/3DASSET/resource/directions.png');
+}
+.directionkey .itemW{
+    width:40px;height:40px;background-color:#000;color:white;justify-content:center;align-items:center;
+    top:0%;left:0;right:0;margin:0 auto;position:absolute;display:inline-flex;
+}
+.directionkey .itemA{
+    width:40px;height:40px;background-color:#000;color:white;justify-content:center;align-items:center;
+    left:0%;top:0;bottom:0;margin:auto 0;position:absolute;display:inline-flex;
+}
+.directionkey .itemS{
+    width:40px;height:40px;background-color:#000;color:white;justify-content:center;align-items:center;
+    bottom:0%;left:0;right:0;margin:0 auto;position:absolute;display:inline-flex;
+}
+.directionkey .itemD{
+    width:40px;height:40px;background-color:#000;color:white;justify-content:center;align-items:center;
+    right:0%;top:0;bottom:0;margin:auto 0;position:absolute;display:inline-flex;
+}
+#characterUI .jumpkey{
+    color:#505050;width:80px;height:auto;text-align:center
+}
+.jumpkey img{
+    display:block;width:80%;height:auto;margin:0 auto;
+}
+#characterUI .characterprofile{
+    background-color:#000; width:100%;height:300px;position:relative;
+}
+.characterprofile .charactername{
+    color:white;font-weight:bold;position:absolute;z-index:5;bottom:10%;text-align:right;padding-right:2%;right:0%
+}
+#characterUI .characterprofile img{
+    width:100%;height:100%;display:block;
+}
+
+.mousewheels{
+    display:flex;flex-flow:row nowrap;justify-content:flex-end;
+}
+.mousewheels .wrapping{
+    width:60%;
+}
+.mousewheels p{
+    width:100%;height:auto;display:block
+}
+.mousewheels img{
+    width:50%;height:auto;display:block
+}
+
+#characterUI .hpAndAttacks p{
+    min-height:24px;line-height:1.5; color:#fe8020
+}
+#characterUI .hpAndAttacks{
+    width:100%;
+}
+#characterUI .hpAndAttacks .attackSkills{
+    width:100%;display:flex;justify-content:center;align-items:center
+}
+#characterUI .hpAndAttacks .attackSkills li{
+    width:75px;height:auto; color:#20ef40;font-weight:bold;font-size:1.2em;text-align:center
+}
+li.Fskill .imgframe{
+    background-image:url('https://sinjaesung.github.io/3DASSET/resource/FarSkill.png'); width:100%;height:75px;background-size:cover;background-position:center; 
+}
+li.Tskill .imgframe{
+    background-image:url('https://sinjaesung.github.io/3DASSET/resource/WeaponSkill.png');width:100%;height:75px;background-size:cover;background-position:center; 
+}
+li.Qskill .imgframe{
+    background-image:url('https://sinjaesung.github.io/3DASSET/resource/ExplodeSkill.png');width:100%;height:75px;background-size:cover;background-position:center; 
+}
+li.Gskill .imgframe{
+    background-image:url('https://sinjaesung.github.io/3DASSET/resource/TransformSkill.png');width:100%;height:75px;background-size:cover;background-position:center; 
+}
+#characterUI .utilSkills {
+    width:100%;display:flex;justify-content:center;align-items:center
+}
+#characterUI .utilSkills li{
+    width:75px;height:auto; color:#20ef40;font-weight:bold;font-size:1.2em;text-align:center
+}
+
+li.Rskill .imgframe{
+    background-image:url('https://sinjaesung.github.io/3DASSET/resource/RSkill.png');width:100%;height:75px;background-size:cover;background-position:center; 
+}
+li.Yskill .imgframe{
+    background-image:url('https://sinjaesung.github.io/3DASSET/resource/YSkill.png');width:100%;height:75px;background-size:cover;background-position:center; 
+
+}
