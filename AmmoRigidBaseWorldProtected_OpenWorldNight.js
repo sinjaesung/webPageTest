@@ -4657,10 +4657,17 @@ class App {
         });  
         // 몬스터
         
+        let added_loadmodel_bg={};
+        added_loadmodel_bg['src']="https://sinjaesung.github.io/3DASSET/moonless_golf_4k.hdr";
+        added_loadmodel_bg['isloaded']=false;
+        this.loadmodels.push(added_loadmodel_bg);
+
         new RGBELoader().load("https://sinjaesung.github.io/3DASSET/moonless_golf_4k.hdr",(texture)=>{
             texture.mapping=THREE.EquirectangularReflectionMapping;
             this.scene.background=texture;
             this.scene.environment=texture;
+
+            added_loadmodel_bg['isloaded']=true
         });
             
         this.createFriendGroup(Ammo); 

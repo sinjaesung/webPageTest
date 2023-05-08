@@ -4715,10 +4715,17 @@ class App {
             this.createEnemyGLTF3(Ammo,pos,"https://sinjaesung.github.io/3DASSET/mob/HumanTypeRocketMan.glb",null,e,hp,power,'farType',speed,mass,'RocketManHuman','https://sinjaesung.github.io/3DASSET/mob/HumanTypeRocketMan_ballchild.glb',skillPos,null,defense,distanceamount,isAir,attackRangeAmount,attackParticlesrc,attackSound,attackColor,isAirChase,2,1,diedSound);
         }
       
+        let added_loadmodel_bg={};
+        added_loadmodel_bg['src']="https://sinjaesung.github.io/3DASSET/satara_night_4k.hdr";
+        added_loadmodel_bg['isloaded']=false;
+        this.loadmodels.push(added_loadmodel_bg);
+
           new RGBELoader().load("https://sinjaesung.github.io/3DASSET/satara_night_4k.hdr",(texture)=>{
               texture.mapping=THREE.EquirectangularReflectionMapping;
               this.scene.background=texture;
               this.scene.environment=texture;
+
+              added_loadmodel_bg['isloaded']=true;
           });
           this.createFriendGroup(Ammo); 
             

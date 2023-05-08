@@ -4833,10 +4833,17 @@ class App {
             this.createEnemyGLTF3(Ammo,pos,"https://sinjaesung.github.io/3DASSET/mob/helicopter.glb",null,e,hp,power,'King',speed,mass,'helliCopter','https://sinjaesung.github.io/3DASSET/mob/helicopter_ballchild.glb',skillPos,null,defense,distanceamount,isAir,attackRangeAmount,attackParticlesrc,attackSounds,attackColor,isAirChase,steps,airAmountflag,diedSound);
         }  
         
+        let added_loadmodel_bg={};
+        added_loadmodel_bg['src']="https://sinjaesung.github.io/3DASSET/table_mountain_2_puresky_4k.hdr";
+        added_loadmodel_bg['isloaded']=false;
+        this.loadmodels.push(added_loadmodel_bg);
+
         new RGBELoader().load("https://sinjaesung.github.io/3DASSET/table_mountain_2_puresky_4k.hdr",(texture)=>{
             texture.mapping=THREE.EquirectangularReflectionMapping;
             this.scene.background=texture;
             this.scene.environment=texture;
+
+            added_loadmodel_bg['isloaded']=true;
         });
             
         //eval(function_string);
