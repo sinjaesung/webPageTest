@@ -3444,7 +3444,7 @@ class App {
                             console.log("조정된 mapMoveFOrm:",moveForm_parameters);
                             //mapMoveForm.submit();
                             localStorage.setItem("characterdatabase",JSON.stringify(moveForm_parameters));
-                            location.href='AmmoRigidBaseMetaWorldindustry.html';
+                            location.href='AmmoRigidBaseMetaWorldIndustry.html';
                         },200);
                     }
                     else if(this.StartEntrance){
