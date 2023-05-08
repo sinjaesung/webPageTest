@@ -1,3 +1,11 @@
+<script>
+      console.log("document.referrer;:",document.referrer);
+    let referer=document.referrer;
+    if(referer=="" || referer.length==0){
+        alert("잘못된 접근");
+        location.href='characterSelect.html'
+    }
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +40,7 @@
         //var hashData=decrypt.toString(CryptoJS.enc.Utf8);
        // console.log("디코딩된 값:characterSrc",hashData);
         //characterSrc=hashData;
-
+      
     </script>
     <script type="module" src="animBaseUse.js" defer></script>
     <style>

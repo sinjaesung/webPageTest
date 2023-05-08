@@ -3410,16 +3410,16 @@ class App {
                                     //console.log("각문자열에 대한 경우의수별 랜덤한 key값!:",key);
                                     //var base64=CryptoJS.enc.Base64.stringify(key);
 
-                                    moveForm_parameters['loadposx']='-333';
+                                    moveForm_parameters['loadposx']='-15';
                                 }else if(s==='loadposy'){
-                                    moveForm_parameters['loadposy']='7';
+                                    moveForm_parameters['loadposy']='224';
                                     //var key=CryptoJS.enc.Utf8.parse('7');//원본밸류의 key값만듬.
                                     //console.log("각문자열에 대한 경우의수별 랜덤한 key값!:",key);
                                     //var base64=CryptoJS.enc.Base64.stringify(key);
                                     //parameter.value=base64;
 
                                 }else if(s==='loadposz'){
-                                    moveForm_parameters['loadposz']='2220';
+                                    moveForm_parameters['loadposz']='411';
                                       //var key=CryptoJS.enc.Utf8.parse('2220');//원본밸류의 key값만듬.
                                       //console.log("각문자열에 대한 경우의수별 랜덤한 key값!:",key);
                                       //var base64=CryptoJS.enc.Base64.stringify(key);
@@ -3444,13 +3444,56 @@ class App {
                             console.log("조정된 mapMoveFOrm:",moveForm_parameters);
                             //mapMoveForm.submit();
                             localStorage.setItem("characterdatabase",JSON.stringify(moveForm_parameters));
-                            location.href='AmmoRigidBaseMetaWorldOpenWorldNight.html';
+                            location.href='AmmoRigidBaseMetaWorldEnemyStart.html';
                         },200);
                     }else if(this.StartEntrance){
                         window.setTimeout(()=>{
                             //form.submit이동 데이터post형태의 이동(안전하게secure) 타깃맵으로이동
                             console.log("타깃맵으로 안전하게 이동!:");
-                            location.href='';
+                            
+                            let moveForm_parameters=this.datastore_object;
+                            for(let s in moveForm_parameters){
+                                let parameter=s;
+                                if(s==='loadposx'){
+                                   // var key=CryptoJS.enc.Utf8.parse('-333');//원본밸류의 key값만듬.
+                                    //console.log("각문자열에 대한 경우의수별 랜덤한 key값!:",key);
+                                    //var base64=CryptoJS.enc.Base64.stringify(key);
+
+                                    moveForm_parameters['loadposx']='-1728';
+                                }else if(s==='loadposy'){
+                                    moveForm_parameters['loadposy']='68.4';
+                                    //var key=CryptoJS.enc.Utf8.parse('7');//원본밸류의 key값만듬.
+                                    //console.log("각문자열에 대한 경우의수별 랜덤한 key값!:",key);
+                                    //var base64=CryptoJS.enc.Base64.stringify(key);
+                                    //parameter.value=base64;
+
+                                }else if(s==='loadposz'){
+                                    moveForm_parameters['loadposz']='-254';
+                                      //var key=CryptoJS.enc.Utf8.parse('2220');//원본밸류의 key값만듬.
+                                      //console.log("각문자열에 대한 경우의수별 랜덤한 key값!:",key);
+                                      //var base64=CryptoJS.enc.Base64.stringify(key);
+                                      //parameter.value=base64;
+                                }else if(s!='gamebg'){
+                                    console.log("paraemtername:",parameter.name,this.datastore_object);
+                                    if(moveForm_parameters[s]){
+                                        let originvalue=moveForm_parameters[s];
+                                        console.log("각 원본값:",originvalue);
+                                        if(typeof(originvalue)==='object'){
+                                            originvalue=JSON.stringify(originvalue);
+                                        }
+                                        console.log("적용원본값:",originvalue);
+                                        //var key=CryptoJS.enc.Utf8.parse(originvalue);//원본밸류의 key값만듬.
+                                        //var base64=CryptoJS.enc.Base64.stringify(key); 
+                                        moveForm_parameters[s]=originvalue;
+                                    }
+                                    
+                                }
+                            }
+                            //mapMoveForm.action='AmmoRigidBaseMetaWorldOpenWorldNight.php';
+                            console.log("조정된 mapMoveFOrm:",moveForm_parameters);
+                            //mapMoveForm.submit();
+                            localStorage.setItem("characterdatabase",JSON.stringify(moveForm_parameters));
+                            location.href='AmmoRigidBaseMetaWorldOpenWorldCity.html';
                         },200);
                     } 
                     //맵별로 다르게 할부분 endsss`
@@ -4472,266 +4515,149 @@ class App {
         this.tempTransform=new Ammo.btTransform()
 
         this.setUpPhysicsWorld(Ammo)
-
-    
-        //map_distinct_Parameter();맵별로 다르게
-        let buildlingColor=new THREE.Color();
-        buildlingColor.setRGB(0.9,0.5,0.45); 
-        let collapseSounds=[];
-        for(let a=0; a<5; a++){
-            let audioListener_buildlingTest=new THREE.AudioListener();
-            let collapseSound=new THREE.Audio(audioListener_buildlingTest);
-            let audioLoader_buildingTest=new THREE.AudioLoader();
-            audioLoader_buildingTest.load('https://sinjaesung.github.io/3DASSET/mob/normalBuildingCollapse.mp3',function(buffer){//사운드 다르게
-                collapseSound.setBuffer(buffer);
-                collapseSound.setLoop(false);
-                collapseSound.setVolume(2.2);
-            });
-            collapseSounds.push(collapseSound);
-        }
-        console.log("collapseSound뭔데?:",collapseSounds)
-        this.createGLTF_EnemyBuildinggroup('https://sinjaesung.github.io/3DASSET/terrain/evil/opencityEnemeyBuilding.glb',Ammo,null,{x:0,y:0,z:0,w:1},0,16000,60,buildlingColor,collapseSounds)
-
+        
         // 몬스터
-        for(let e=0; e<2; e++){//humanBad created Types (메카닉:전투기계들,바이오닉,사이보그) 메카닉king
+        for(let e=0; e<6; e++){//humanBad created Types (메카닉:전투기계들,바이오닉,사이보그)
             let unit=e%2==0?-1:1;
             let x=Math.random()*80*unit; //-500~500범위가능
-            let y=Math.random()*3+3310;//항상양수
+            let y=Math.random()*3+70;//항상양수
             let z=Math.random()*80*unit
 
             let pos={'x':x,'y':y,'z':z}
             let skillPos={'x':40,'y':6,'z':6}
 
-            let hp=600000;
-            let power=12000;
-            let speed=0.4;//max값 1.2 0~36벙뮈 36거리곱범위 매우 먼 범위
-            let mass=200;
-            let defense=500;
-            let distanceamount=250;
-            let airAmountflag=1.3;
-            let isAir=true;
+            let hp=10500;
+            let power=400;
+            let speed=0.3;//max값 1.2 0~36벙뮈 36거리곱범위 매우 먼 범위
+            let mass=80;
+            let defense=50;
+            let distanceamount=36;
+            let isAir=false;
             let isAirChase=true;
 
-            let attackRangeAmount=22;
-            let attackParticlesrc='https://sinjaesung.github.io/3DASSET/mob/fighterPlaneExplosion.jpg';
+            let attackRangeAmount=4;
+            let attackParticlesrc='https://sinjaesung.github.io/3DASSET/mob/fire2.jpg';
             let attackColor=new THREE.Color();
-            let steps=24;
-            attackColor.setRGB(1,0.76,0); 
+            attackColor.setRGB(1,0.1,0); 
 
-            let attackSounds=[];
-            for(let a=0; a<2; a++){
-                let audioListener_individual=new THREE.AudioListener();
-                let attackSound=new THREE.Audio(audioListener_individual);
-                let audioLoader_local=new THREE.AudioLoader();
-                audioLoader_local.load('https://sinjaesung.github.io/3DASSET/mob/planeBigExplosion.mp3',function(buffer){//무기공격성공시사운드 다르게
-                    attackSound.setBuffer(buffer);
-                    attackSound.setLoop(false);
-                    attackSound.setVolume(0.3);
-                });
-                attackSounds.push(attackSound)
-            }
+            let audioListener_individual=new THREE.AudioListener();
+            let attackSound=new THREE.Audio(audioListener_individual);
+            let audioLoader_local=new THREE.AudioLoader();
+            audioLoader_local.load('https://sinjaesung.github.io/3DASSET/mob/gunSounds.mp3',function(buffer){//무기공격성공시사운드 다르게
+                attackSound.setBuffer(buffer);
+                attackSound.setLoop(false);
+                attackSound.setVolume(0.3);
+            });
 
             let audioListener=new THREE.AudioListener();
             let diedSound=new THREE.Audio(audioListener);
             let audioLoader_local2=new THREE.AudioLoader();
-            audioLoader_local2.load('https://sinjaesung.github.io/3DASSET/mob/mahcine_explodeSound.mp3',function(buffer){
+            audioLoader_local2.load('https://sinjaesung.github.io/3DASSET/mob/enemyhuman_diedsound.mp3',function(buffer){
                 diedSound.setBuffer(buffer);
                 diedSound.setLoop(false);
-                diedSound.setVolume(10);
+                diedSound.setVolume(1);
             });
 
-            this.createEnemyGLTF3(Ammo,pos,"https://sinjaesung.github.io/3DASSET/mob/AirPlane1.glb",null,e,hp,power,'King',speed,mass,'AirPlane','https://sinjaesung.github.io/3DASSET/mob/AirPlane1_ballchild.glb',skillPos,null,defense,distanceamount,isAir,attackRangeAmount,attackParticlesrc,attackSounds,attackColor,isAirChase,steps,airAmountflag,diedSound);
-        } 
-        for(let e=0; e<2; e++){//humanBad created Types (메카닉:전투기계들,바이오닉,사이보그) 메카닉king
+            this.createEnemyGLTF3(Ammo,pos,"https://sinjaesung.github.io/3DASSET/mob/HumanTypeGunMan.glb",null,e,hp,power,'farType',speed,mass,'GunManHuman','https://sinjaesung.github.io/3DASSET/mob/HumanTypeGunMan_ballchild.glb',skillPos,null,defense,distanceamount,isAir,attackRangeAmount,attackParticlesrc,attackSound,attackColor,isAirChase,2,1,diedSound);
+        }
+        for(let e=0; e<5; e++){//humanBad created Types (메카닉:전투기계들,바이오닉,사이보그)
             let unit=e%2==0?-1:1;
             let x=Math.random()*80*unit; //-500~500범위가능
-            let y=Math.random()*3+3310;//항상양수
+            let y=Math.random()*3+70;//항상양수
             let z=Math.random()*80*unit
 
             let pos={'x':x,'y':y,'z':z}
             let skillPos={'x':40,'y':6,'z':6}
 
-            let hp=650000;
-            let power=10000;
-            let speed=0.4;//max값 1.2 0~36벙뮈 36거리곱범위 매우 먼 범위
-            let mass=240;
-            let defense=530;
-            let distanceamount=250;
-            let airAmountflag=1.3;
-            let isAir=true;
+            let hp=19500;
+            let power=500;
+            let speed=0.3;//max값 1.2 0~36벙뮈 36거리곱범위 매우 먼 범위
+            let mass=80;
+            let defense=100;
+            let distanceamount=60;
+            let isAir=false;
             let isAirChase=true;
 
-            let attackRangeAmount=20;
-            let attackParticlesrc='https://sinjaesung.github.io/3DASSET/mob/HelliCopterKingExplodes.jpg';
+            let attackRangeAmount=5;
+            let attackParticlesrc='https://sinjaesung.github.io/3DASSET/mob/fire2.jpg';
             let attackColor=new THREE.Color();
-            let steps=24;
-            attackColor.setRGB(1,0.46,0); 
+            attackColor.setRGB(0.5,0.2,0.8); 
 
-            let attackSounds=[];
-            for(let a=0; a<6; a++){
-                let audioListener_individual=new THREE.AudioListener();
-                let attackSound=new THREE.Audio(audioListener_individual);
-                let audioLoader_local=new THREE.AudioLoader();
-                audioLoader_local.load('https://sinjaesung.github.io/3DASSET/mob/explosionHelli_.mp3',function(buffer){//무기공격성공시사운드 다르게
-                    attackSound.setBuffer(buffer);
-                    attackSound.setLoop(false);
-                    attackSound.setVolume(0.3);
-                });
-                attackSounds.push(attackSound)
-            }
+            let audioListener_individual=new THREE.AudioListener();
+            let attackSound=new THREE.Audio(audioListener_individual);
+            let audioLoader_local=new THREE.AudioLoader();
+            audioLoader_local.load('https://sinjaesung.github.io/3DASSET/mob/pistol.mp3',function(buffer){//무기공격성공시사운드 다르게
+                attackSound.setBuffer(buffer);
+                attackSound.setLoop(false);
+                attackSound.setVolume(0.3);
+            });
 
             let audioListener=new THREE.AudioListener();
             let diedSound=new THREE.Audio(audioListener);
             let audioLoader_local2=new THREE.AudioLoader();
-            audioLoader_local2.load('https://sinjaesung.github.io/3DASSET/mob/mahcine_explodeSound.mp3',function(buffer){
-                diedSound.setBuffer(buffer);
-                diedSound.setLoop(false);
-                diedSound.setVolume(10);
-            });
-
-            this.createEnemyGLTF3(Ammo,pos,"https://sinjaesung.github.io/3DASSET/mob/helicopter.glb",null,e,hp,power,'King',speed,mass,'helliCopter','https://sinjaesung.github.io/3DASSET/mob/helicopter_ballchild.glb',skillPos,null,defense,distanceamount,isAir,attackRangeAmount,attackParticlesrc,attackSounds,attackColor,isAirChase,steps,airAmountflag,diedSound);
-        } 
-
-        for(let e=0; e<10; e++){
-            let unit=e%2==0?-1:1;
-            let x=Math.random()*40*unit; //-500~500범위가능
-            let y=Math.random()*3+70;//항상양수
-            let z=Math.random()*40*unit
-
-            let pos={'x':x,'y':y,'z':z}
-
-            let hp=250;
-            let power=0;
-            let speed=0.1;//max값 1.2 0~36벙뮈 36거리곱범위 매우 먼 범위
-            let mass=50;
-            let defense=0;
-
-            let audioListener=new THREE.AudioListener();
-            let diedSound=new THREE.Audio(audioListener);
-            let audioLoader_local=new THREE.AudioLoader();
-            audioLoader_local.load('https://sinjaesung.github.io/3DASSET/mob/man_diedsound.mp3',function(buffer){
-                diedSound.setBuffer(buffer);
-                diedSound.setLoop(false);
-                diedSound.setVolume(1);
-            });
-            
-            this.createAnotherCharacterGLTF(Ammo,pos,"https://sinjaesung.github.io/3DASSET/terrain/evil/cityhumanMale.glb",null,e,hp,power,'anothercharacter',speed,mass,'citypersonmale',defense,'',null,diedSound);
-        }
-        for(let e=0; e<10; e++){
-            let unit=e%2==0?-1:1;
-            let x=Math.random()*40*unit; //-500~500범위가능
-            let y=Math.random()*3+70;//항상양수
-            let z=Math.random()*40*unit
-
-            let pos={'x':x,'y':y,'z':z}
-
-            let hp=200;
-            let power=0;
-            let speed=0.1;//max값 1.2 0~36벙뮈 36거리곱범위 매우 먼 범위
-            let mass=40;
-            let defense=0;
-
-            let audioListener=new THREE.AudioListener();
-            let diedSound=new THREE.Audio(audioListener);
-            let audioLoader_local=new THREE.AudioLoader();
-            audioLoader_local.load('https://sinjaesung.github.io/3DASSET/mob/citywoman_diedsound.mp3',function(buffer){
+            audioLoader_local2.load('https://sinjaesung.github.io/3DASSET/mob/enemyhuman_diedsound.mp3',function(buffer){
                 diedSound.setBuffer(buffer);
                 diedSound.setLoop(false);
                 diedSound.setVolume(1);
             });
 
-            this.createAnotherCharacterGLTF(Ammo,pos,"https://sinjaesung.github.io/3DASSET/terrain/evil/cityhumanfeMale.glb",null,e,hp,power,'anothercharacter',speed,mass,'citypersonfemale',defense,'woman',null,diedSound);
+            this.createEnemyGLTF3(Ammo,pos,"https://sinjaesung.github.io/3DASSET/mob/HumanTypePistolMan.glb",null,e,hp,power,'farType',speed,mass,'pistolManHuman','https://sinjaesung.github.io/3DASSET/mob/HumanTypePistolMan_ballchild.glb',skillPos,null,defense,distanceamount,isAir,attackRangeAmount,attackParticlesrc,attackSound,attackColor,isAirChase,2,1,diedSound);
         }
-        for(let e=0; e<10; e++){
+        for(let e=0; e<5; e++){
             let unit=e%2==0?-1:1;
-            let x=Math.random()*600*unit; //-500~500범위가능
+            let x=Math.random()*80*unit; //-500~500범위가능
             let y=Math.random()*3+70;//항상양수
-            let z=Math.random()*600*unit
+            let z=Math.random()*80*unit
 
             let pos={'x':x,'y':y,'z':z}
 
-            let hp=6000;
-            let power=0;
-            let speed=0.1;//max값 1.2 0~36벙뮈 36거리곱범위 매우 먼 범위
-            let mass=300;
-            let defense=10;
-            
-            let audioListener=new THREE.AudioListener();
-            let diedSound=new THREE.Audio(audioListener);
+            //monster knife맨
+            let hp=24000;
+            let power=420;
+            let speed=0.7;
+            let mass=80;
+            let defense=120;
+            let is_air_limit=false;
+
+            let audioListener_individual=new THREE.AudioListener();
+            let attackSound=new THREE.Audio(audioListener_individual);
             let audioLoader_local=new THREE.AudioLoader();
-            audioLoader_local.load('https://sinjaesung.github.io/3DASSET/mob/mahcine_explodeSound.mp3',function(buffer){
-                diedSound.setBuffer(buffer);
-                diedSound.setLoop(false);
-                diedSound.setVolume(3);
+            audioLoader_local.load('https://sinjaesung.github.io/3DASSET/mob/knifeSounds.mp3',function(buffer){//무기공격성공시사운드 다르게
+                attackSound.setBuffer(buffer);
+                attackSound.setLoop(false);
+                attackSound.setVolume(0.3);
             });
 
-            this.createAnotherCharacterGLTF(Ammo,pos,"https://sinjaesung.github.io/3DASSET/terrain/evil/cityCar.glb",null,e,hp,power,'anothercharacter',speed,mass,'cityCar',defense,'Car',null,diedSound);
+            let audioListener=new THREE.AudioListener();
+            let diedSound=new THREE.Audio(audioListener);
+            let audioLoader_local2=new THREE.AudioLoader();
+            audioLoader_local2.load('https://sinjaesung.github.io/3DASSET/mob/enemyhuman_diedsound.mp3',function(buffer){
+                diedSound.setBuffer(buffer);
+                diedSound.setLoop(false);
+                diedSound.setVolume(1);
+            });
+
+
+            this.createEnemyGLTF(Ammo,pos,"https://sinjaesung.github.io/3DASSET/mob/HumanTypeKnifeMan.glb",null,e,hp,power,'closeType',speed,mass,'knifeManHuman',defense,is_air_limit,attackSound,diedSound);//근거리형유닛
         }
-        for(let e=0; e<1; e++){
-            let unit=e%2==0?-1:1;
-            let x=Math.random()*10*unit; //-500~500범위가능
-            let y=Math.random()*3+70;//항상양수
-            let z=Math.random()*10*unit
+         //맵별로 다르게 할부분 endsss
+         
 
-            let pos={'x':x,'y':y,'z':z}
-
-            let hp=2500000;
-            let power=0;
-            let speed=0.1;//max값 1.2 0~36벙뮈 36거리곱범위 매우 먼 범위
-            let mass=150;
-            let defense=400;
-
-            this.createAnotherCharacterGLTF(Ammo,pos,"https://sinjaesung.github.io/3DASSET/mob/monsterVer2-10.glb",null,e,hp,power,'anothercharacter',speed,mass,'monsterFriends',defense,'');
-        }
-        for(let e=0; e<1; e++){
-            let unit=e%2==0?-1:1;
-            let x=Math.random()*10*unit; //-500~500범위가능
-            let y=Math.random()*3+70;//항상양수
-            let z=Math.random()*10*unit
-
-            let pos={'x':x,'y':y,'z':z}
-
-            let hp=2500000;
-            let power=0;
-            let speed=0.1;//max값 1.2 0~36벙뮈 36거리곱범위 매우 먼 범위
-            let mass=240;
-            let defense=500;
-
-            this.createAnotherCharacterGLTF(Ammo,pos,"https://sinjaesung.github.io/3DASSET/mob/monsterVer3-2.glb",null,e,hp,power,'anothercharacter',speed,mass,'monsterFriends',defense,'');
-        }
-        for(let e=0; e<1; e++){
-            let unit=e%2==0?-1:1;
-            let x=Math.random()*10*unit; //-500~500범위가능
-            let y=Math.random()*3+70;//항상양수
-            let z=Math.random()*10*unit
-
-            let pos={'x':x,'y':y,'z':z}
-
-            let hp=2500000;
-            let power=0;
-            let speed=0.1;//max값 1.2 0~36벙뮈 36거리곱범위 매우 먼 범위
-            let mass=200;
-            let defense=400;
-
-            this.createAnotherCharacterGLTF(Ammo,pos,"https://sinjaesung.github.io/3DASSET/mob/monsterVer3Female2.glb",null,e,hp,power,'anothercharacter',speed,mass,'monsterFriends',defense,'Woman_');
-        }
-        this.createGLTFGroup('https://sinjaesung.github.io/3DASSET/terrain/evil/CityGroundBase.glb',Ammo,null,{x:0,y:0,z:0,w:1},0,{
+        this.createGLTFGroup('https://sinjaesung.github.io/3DASSET/terrain/evil/openWorldNight.glb',Ammo,null,{x:0,y:0,z:0,w:1},0,{
             'shapeType':'convexHall'
         });
-        this.createGLTFGroup('https://sinjaesung.github.io/3DASSET/terrain/evil/CityGroundBaseSystem.glb',Ammo,null,{x:0,y:0,z:0,w:1},0,{
-            'shapeType':'convexHall'
-        });
-        this.createGLTFGroup('https://sinjaesung.github.io/3DASSET/terrain/evil/ControlEnemyTower.glb',Ammo,null,{x:0,y:0,z:0,w:1},0,{
-            'shapeType':'convexHall'
-        });
+      
         //포탈!!(맵간 이동) 별도 파라미터 넣지않으면 이동시 맵의 초기설정위치에서 로드,pos넣을시 그 post에 관련된 위치에서 카메라랑,캐릭터랑 해서 로드
-        this.NextPORTAL('https://sinjaesung.github.io/3DASSET/terrain/evil/openWorldCity_Nextfortal.glb',Ammo,null,{x:0,y:0,z:0,w:1},0,{
+        this.NextPORTAL('https://sinjaesung.github.io/3DASSET/terrain/evil/openWorldNight_Nextfortal.glb',Ammo,null,{x:0,y:0,z:0,w:1},0,{
             'shapeType':'convexTriangle'
         });
-
+        
+        this.StartPORTAL('https://sinjaesung.github.io/3DASSET/terrain/evil/openWorldNight_Startfortal.glb',Ammo,null,{x:0,y:0,z:0,w:1},0,{
+            'shapeType':'convexTriangle'
+        });  
         // 몬스터
-
-        new RGBELoader().load("https://sinjaesung.github.io/3DASSET/hansaplatz_4k.hdr",(texture)=>{
+        
+        new RGBELoader().load("https://sinjaesung.github.io/3DASSET/moonless_golf_4k.hdr",(texture)=>{
             texture.mapping=THREE.EquirectangularReflectionMapping;
             this.scene.background=texture;
             this.scene.environment=texture;
