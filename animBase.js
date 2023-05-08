@@ -1,6 +1,6 @@
 import * as THREE from 'three';
-import {OrbitControls} from './three.js-master/examples/jsm/controls/OrbitControls';
-import {GLTFLoader} from './three.js-master/examples/jsm/loaders/GLTFLoader';
+import {OrbitControls} from './three.js-master/examples/jsm/controls/OrbitControls.js';
+import {GLTFLoader} from './three.js-master/examples/jsm/loaders/GLTFLoader.js';
 
 class animBase{
     constructor(characterSrc){
