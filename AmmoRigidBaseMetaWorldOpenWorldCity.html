@@ -112,15 +112,5 @@ let guide_random_index=Math.ceil(Math.random()*3);
         gamebg.src=game_bg;
     if(guideimg)
         guideimg.src=guide_bg;
-    window.onload=function(){
-        let tskill=document.getElementById("Tskill");
-        let character_object=JSON.parse(localStorage.getItem("characterdatabase"));
-        let type=character_object['type'];
-        if(type!='Far'){
-            tskill.style.display='block'
-        }else{
-            tskill.style.display='none';
-        }
-    }
 </script>
 </html> 

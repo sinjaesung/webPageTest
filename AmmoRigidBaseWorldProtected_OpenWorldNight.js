@@ -81,7 +81,15 @@ class App {
         캐릭터별 인자:hp,speed,무기기본공격력,basepower(곱량),폭발물기본공격력(발사체,폭발오브젝트자체콜리션 충돌뎀지),원격레이저기본공격력,defense,웨폰url,캐릭터트랜스폼url,캐릭터볼url,캐릭터폭발물url,캐릭터모델본 url,캐릭터emssive 컨셉색상(원격조준,변신기등등,폭발물등등)
         사운드:폭발사운드,무기사운드,레이저사운드,변신기사운드,캐릭터죽을떄&맞을때 등 사운드
         */
-       this.type=datastore_object['type'];
+        let tskill=document.getElementById("Tskill");
+        let type=character_object['type'];
+        if(type!='Far'){
+            tskill.style.display='block'
+        }else{
+            tskill.style.display='none';
+        }
+        
+        this.type=datastore_object['type'];
        
        this.characterSrc=datastore_object['characterSrc'];
        this.characterTransformSrc=datastore_object['characterTransformSrc'];
@@ -2587,7 +2595,7 @@ class App {
             if(this.character1.position.y <= -5000){
                 this.threejsScene_animated=false;
                 window.setTimeout(()=>{
-                    location.reload();
+                    location.href="./characterSelect.html"
                 },1200);
             }
         }
@@ -3388,7 +3396,7 @@ class App {
                     if(this.character1.userData.status=='unlive' || this.character1.userData.hp<=0){
                         if(window.confirm("캐릭터가 죽었습니다")){
                             window.setTimeout(function(){
-                                 location.reload();
+                                location.href="./characterSelect.html"
                              },2000);
                          }
                     }
