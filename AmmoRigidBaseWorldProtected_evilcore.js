@@ -4559,9 +4559,9 @@ class App {
         // 몬스터
         for(let e=0; e<20; e++){//humanBad created Types (메카닉:전투기계들,바이오닉,사이보그)
             let unit=e%2==0?-1:1;
-            let x=Math.random()*150+300; // 300~450
-            let y=180;//항상양수
-            let z=Math.random()*380-180//0~400 -180~200
+            let x=Math.random()*80*unit; //-500~500범위가능
+            let y=Math.random()*3+20;//항상양수
+            let z=Math.random()*80*unit
             let pos={'x':x,'y':y,'z':z}
             let hp=15000;
             let power=0;
@@ -4583,7 +4583,7 @@ class App {
         for(let e=0; e<20; e++){//humanBad created Types (메카닉:전투기계들,바이오닉,사이보그)
             let unit=e%2==0?-1:1;
             let x=Math.random()*80*unit; //-500~500범위가능
-            let y=Math.random()*3+70;//항상양수
+            let y=Math.random()*3+20;//항상양수
             let z=Math.random()*80*unit
 
             let pos={'x':x,'y':y,'z':z}
@@ -4627,7 +4627,7 @@ class App {
         for(let e=0; e<10; e++){//humanBad created Types (메카닉:전투기계들,바이오닉,사이보그)
             let unit=e%2==0?-1:1;
             let x=Math.random()*80*unit; //-500~500범위가능
-            let y=Math.random()*3+70;//항상양수
+            let y=Math.random()*3+20;//항상양수
             let z=Math.random()*80*unit
 
             let pos={'x':x,'y':y,'z':z}
@@ -4670,7 +4670,7 @@ class App {
         for(let e=0; e<10; e++){
             let unit=e%2==0?-1:1;
             let x=Math.random()*80*unit; //-500~500범위가능
-            let y=Math.random()*3+70;//항상양수
+            let y=Math.random()*3+20;//항상양수
             let z=Math.random()*80*unit
 
             let pos={'x':x,'y':y,'z':z}
@@ -4707,7 +4707,7 @@ class App {
         for(let e=0; e<10; e++){
             let unit=e%2==0?-1:1;
             let x=Math.random()*80*unit; //-500~500범위가능
-            let y=Math.random()*3+70;//항상양수
+            let y=Math.random()*3+20;//항상양수
             let z=Math.random()*80*unit
 
             let pos={'x':x,'y':y,'z':z}
@@ -4742,11 +4742,11 @@ class App {
         }
 
         let added_loadmodel_bg={};
-        added_loadmodel_bg['src']="https://sinjaesung.github.io/3DASSET/bank_vault_4k.hdr";
+        added_loadmodel_bg['src']="https://sinjaesung.github.io/3DASSET/country_club_4k.hdr";
         added_loadmodel_bg['isloaded']=false;
         this.loadmodels.push(added_loadmodel_bg);
 
-        new RGBELoader().load("https://sinjaesung.github.io/3DASSET/bank_vault_4k.hdr",(texture)=>{
+        new RGBELoader().load("https://sinjaesung.github.io/3DASSET/country_club_4k.hdr",(texture)=>{
             texture.mapping=THREE.EquirectangularReflectionMapping;
             this.scene.background=texture;
             this.scene.environment=texture;
