@@ -31,8 +31,8 @@
 <script>
     
 //random game bgs....!!!
-let game_bgs=['https://sinjaesung.github.io/3DASSET/resource/gameimg/AiMechaGroup.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/gameImage1.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/HumanEvilGroups.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/MINDSET.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/pinkyGameimg.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/windyGameimg.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/pukyGameimg.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/rinrinGameimg.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/kaiGameimg.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/LoidGameimg.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/RayGameimg.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/mimiGameimg.jpg'];
-let guide_imgs=['https://sinjaesung.github.io/3DASSET/resource/gameimg/gameGuide1.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/gameGuide2.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/gameGuide3.jpg','https://sinjaesung.github.io/3DASSET/resource/gameimg/gameGuide4.jpg'];
+let game_bgs=['https://sinjaesung.github.io/3DASSETtest/resource/gameimg/AiMechaGroup.jpg','https://sinjaesung.github.io/3DASSETtest/resource/gameimg/gameImage1.jpg','https://sinjaesung.github.io/3DASSETtest/resource/gameimg/HumanEvilGroups.jpg','https://sinjaesung.github.io/3DASSETtest/resource/gameimg/MINDSET.jpg','https://sinjaesung.github.io/3DASSETtest/resource/gameimg/pinkyGameimg.jpg','https://sinjaesung.github.io/3DASSETtest/resource/gameimg/windyGameimg.jpg','https://sinjaesung.github.io/3DASSETtest/resource/gameimg/pukyGameimg.jpg','https://sinjaesung.github.io/3DASSETtest/resource/gameimg/rinrinGameimg.jpg','https://sinjaesung.github.io/3DASSETtest/resource/gameimg/kaiGameimg.jpg','https://sinjaesung.github.io/3DASSETtest/resource/gameimg/LoidGameimg.jpg','https://sinjaesung.github.io/3DASSETtest/resource/gameimg/RayGameimg.jpg','https://sinjaesung.github.io/3DASSETtest/resource/gameimg/mimiGameimg.jpg'];
+let guide_imgs=['https://sinjaesung.github.io/3DASSETtest/resource/gameimg/gameGuide1.jpg','https://sinjaesung.github.io/3DASSETtest/resource/gameimg/gameGuide2.jpg','https://sinjaesung.github.io/3DASSETtest/resource/gameimg/gameGuide3.jpg','https://sinjaesung.github.io/3DASSETtest/resource/gameimg/gameGuide4.jpg'];
 
 let bg_random_index=Math.ceil(Math.random()*11)
 let guide_random_index=Math.ceil(Math.random()*3);
@@ -42,7 +42,7 @@ let guide_random_index=Math.ceil(Math.random()*3);
     <div id="pageLoader">
         <img src="" class='gamebg' id="gamebg"/>
         <img src="" class='guideimg' id="guideimg"/>
-        <img src="https://sinjaesung.github.io/3DASSET/resource/gameimg/loading.gif" class='loading'/>
+        <img src="https://sinjaesung.github.io/3DASSETtest/resource/gameimg/loading.gif" class='loading'/>
     </div> 
     <div id="webgl-container">
         
@@ -55,7 +55,7 @@ let guide_random_index=Math.ceil(Math.random()*3);
         <div class='row'>
             <div class='mousewheels'>
                 <div class='wrapping'>
-                    <img src='https://sinjaesung.github.io/3DASSET/resource/Zooms.png'>
+                    <img src='https://sinjaesung.github.io/3DASSETtest/resource/Zooms.png'>
                     <p>MOUSE WHEEL</p>
                 </div>
             </div> 
@@ -68,9 +68,9 @@ let guide_random_index=Math.ceil(Math.random()*3);
                 <p class='itemD'>D</p>
             </div>
             <div class='jumpkey'>
-                <img src='https://sinjaesung.github.io/3DASSET/resource/jump.png'>
+                <img src='https://sinjaesung.github.io/3DASSETtest/resource/jump.png'>
                 <p>spacebar</p>
-                <img src='https://sinjaesung.github.io/3DASSET/resource/Run.png'>
+                <img src='https://sinjaesung.github.io/3DASSETtest/resource/Run.png'>
                 <p>Shift + w,a,s,d</p>
             </div>
             
@@ -112,15 +112,6 @@ let guide_random_index=Math.ceil(Math.random()*3);
         gamebg.src=game_bg;
     if(guideimg)
         guideimg.src=guide_bg;
-    window.onload=function(){
-        let tskill=document.getElementById("Tskill");
-        let character_object=JSON.parse(localStorage.getItem("characterdatabase"));
-        let type=character_object['type'];
-        if(type!='Far'){
-            tskill.style.display='block'
-        }else{
-            tskill.style.display='none';
-        }
-    }
+   
 </script>
 </html> 

@@ -142,6 +142,13 @@ button, input, select, textarea { font-family:"Noto Sans Kr","Noto Sans","Arial 
     position:fixed; width:100%; height:100vh; left:0; top:0; 
     background-color:#000; opacity:1
 }
+#GodMonsterList{
+position:absolute;right:0;top:0;width:14%;background-color:rgba(0,0,0,0.8);
+color:white;font-weight:bold;
+}
+#GodMonsterList li{
+padding:0.5rem 0
+}
 .gamebg{
     width:auto;height:100%;position:absolute;left:0;top:0;
 }
@@ -160,7 +167,7 @@ button, input, select, textarea { font-family:"Noto Sans Kr","Noto Sans","Arial 
 #characterUI .directionkey{
    color:white;position:relative;width:160px;height:160px; 
     background-size:40% auto;background-repeat:no-repeat;background-position:center; 
-    background-image:url('https://sinjaesung.github.io/3DASSET/resource/directions.png');
+    background-image:url('https://sinjaesung.github.io/3DASSETtest/resource/directions.png');
 }
 .directionkey .itemW{
     width:40px;height:40px;background-color:#000;color:white;justify-content:center;align-items:center;
@@ -220,16 +227,16 @@ button, input, select, textarea { font-family:"Noto Sans Kr","Noto Sans","Arial 
     width:75px;height:auto; color:#20ef40;font-weight:bold;font-size:1.2em;text-align:center
 }
 li.Fskill .imgframe{
-    background-image:url('https://sinjaesung.github.io/3DASSET/resource/FarSkill.png'); width:100%;height:75px;background-size:cover;background-position:center; 
+    background-image:url('https://sinjaesung.github.io/3DASSETtest/resource/FarSkill.png'); width:100%;height:75px;background-size:cover;background-position:center; 
 }
 li.Tskill .imgframe{
-    background-image:url('https://sinjaesung.github.io/3DASSET/resource/WeaponSkill.png');width:100%;height:75px;background-size:cover;background-position:center; 
+    background-image:url('https://sinjaesung.github.io/3DASSETtest/resource/WeaponSkill.png');width:100%;height:75px;background-size:cover;background-position:center; 
 }
 li.Qskill .imgframe{
-    background-image:url('https://sinjaesung.github.io/3DASSET/resource/ExplodeSkill.png');width:100%;height:75px;background-size:cover;background-position:center; 
+    background-image:url('https://sinjaesung.github.io/3DASSETtest/resource/ExplodeSkill.png');width:100%;height:75px;background-size:cover;background-position:center; 
 }
 li.Gskill .imgframe{
-    background-image:url('https://sinjaesung.github.io/3DASSET/resource/TransformSkill.png');width:100%;height:75px;background-size:cover;background-position:center; 
+    background-image:url('https://sinjaesung.github.io/3DASSETtest/resource/TransformSkill.png');width:100%;height:75px;background-size:cover;background-position:center; 
 }
 #characterUI .utilSkills {
     width:100%;display:flex;justify-content:center;align-items:center
@@ -239,9 +246,9 @@ li.Gskill .imgframe{
 }
 
 li.Rskill .imgframe{
-    background-image:url('https://sinjaesung.github.io/3DASSET/resource/RSkill.png');width:100%;height:75px;background-size:cover;background-position:center; 
+    background-image:url('https://sinjaesung.github.io/3DASSETtest/resource/RSkill.png');width:100%;height:75px;background-size:cover;background-position:center; 
 }
 li.Yskill .imgframe{
-    background-image:url('https://sinjaesung.github.io/3DASSET/resource/YSkill.png');width:100%;height:75px;background-size:cover;background-position:center; 
+    background-image:url('https://sinjaesung.github.io/3DASSETtest/resource/YSkill.png');width:100%;height:75px;background-size:cover;background-position:center; 
 
 }
